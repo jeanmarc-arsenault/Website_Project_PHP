@@ -1,0 +1,90 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Oct. 20, 2022, 12:34:23 p.m.
+    Author     : darth
+*/
+
+
+
+header{
+    background-color: grey;
+    height: 100px;
+    text-align: center;
+    
+}
+
+body{
+    background-color: black;
+    font-size: 20px;
+    color: white;
+    background-image: url("../media/space.jpg");
+}
+
+.logoshow{
+    height: 100px;
+    width: auto;
+    float: left;
+}
+
+
+
+.menu-options {
+    
+}
+
+.menu-options ul {
+
+    font-size: 25px;
+
+}
+
+.menu-options ul li {
+
+    display: inline;
+    margin-left: 50px;
+
+}
+
+.menu-options a {
+    margin-top: 50px;
+    color: yellow;
+
+}
+
+.container {
+
+    margin: 0 auto;
+    justify-content: start;
+    align-items: center;
+
+
+}
+
+.title{
+    font-size: 25px;
+    text-align: center;
+    
+}
+
+.imageshow{
+    height: 300px;
+    width: auto;
+}
+
+
+/* setting footer at bottom of screen and setting width to 95 to eliminate scrool bars*/
+footer { 
+    clear: both;
+    padding: 20px 0;
+    position: absolute;
+    font-size: 18px;
+    color: white;
+    width : 95%;
+    text-align: center;
+    bottom : 0;
+    
+}
+
