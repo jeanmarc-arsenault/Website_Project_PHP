@@ -8,6 +8,10 @@ $city = "";
 $com = "";
 $price = "";
 $qty = "";
+$subtotal= "";
+$taxes= "";
+$grandtotal= "";
+
 
 $validationErrorPrdcode = "";
 $validationErrorFname = "";
@@ -26,7 +30,7 @@ $orderConfirmation = "";
     define("FILE_ORDERS", FOLDER_ORDERS."orders.json");
     define("FILE_PHPFUNCTIONS", FOLDER_PHPFUNCTIONS."PHPFunctions.php");
     require_once FILE_PHPFUNCTIONS;
-    pageTop("Buying");
+    pageTop("Buying",'class="spaceback"',"logoshow");
 
     
     
@@ -85,6 +89,10 @@ if(isset($_POST["buy"]))  #strlen > 20
         $validationErrorPrice = "The price cannot be Null!";
         $errorOccured = true;
     }
+    elseif(str_contains($price, "$")){
+        $validationErrorPrice = "only insert the number no dollar signs!";
+        $errorOccured = true;
+    }
     elseif ($price > 100000000.00 || $price <= 0){//since I went with a sci fi setting Im changing the max to 100 million from 10,000.00
         $validationErrorPrice = "The price has to be more than 0 and no more than 100,000,000.01!";
         $errorOccured = true;
@@ -100,7 +108,7 @@ if(isset($_POST["buy"]))  #strlen > 20
         $subtotal   = round($qty*$price, 2);
         $taxes      = round(0.161*$subtotal, 2);
         $grandtotal =   round($subtotal+ $taxes, 2);
-        $orderConfirmation = "Your order has be recorded!"."---> Subtotal: ".$subtotal."---> taxes amount : ".$taxes. "---> Grand total: ".$grandtotal;
+        $orderConfirmation = "Your order has be recorded!"."---> Subtotal: ".$subtotal."$---> taxes amount : ".$taxes. "$---> Grand total: ".$grandtotal."$";
         
         #save data on file
         $order = array($prdcode, $fname, $lname, $city, $com, $price, $qty, $subtotal,$taxes,$grandtotal);
@@ -174,11 +182,12 @@ echo $city;
             </p>
             <p>
                 <label>Comments:</label>
-                <input type="text" name="com"  value="
+                    <textarea rows="2" cols="30" name="com" value="
+                        
 <?php
 echo $com;
 ?>
-">
+" maxlength="200"></textarea>
             </p>   
             <p>
                 <label>Price:</label>

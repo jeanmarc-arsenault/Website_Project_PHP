@@ -11,7 +11,7 @@ header("Expires:tue, 29 novd");
 header("Cache-Control:no-cache");
 header("Pragma:no-cache");
 //constants
-define("DEBUGGING", true);
+define("DEBUGGING", false);
 
 function manageError($errorNumber, $errorString, $errorFile, $errorLineNumber)
 {
@@ -31,7 +31,7 @@ function manageException($errorObject)
 {
     if(DEBUGGING)
     {
-    echo $errorObject-> getLine() . "of the file " . $errorObject-> getFile() . ": "  . $errorObject-> getCode() . ")" ;
+    echo $errorObject-> getLine() . " of the file " . $errorObject-> getFile() . " : "  . $errorObject-> getCode() . ")" ;
             #save detailed error into file
     die();
     }
@@ -63,7 +63,7 @@ define("FOLDER_MEDIA", "media/");
 
 define("IMAGE_LOGO", FOLDER_MEDIA . "trashspaceship.jpg");
 define("IMAGE_SPACE_BACKGROUND", FOLDER_MEDIA . "space.jpg");
-function pageTop($Title){?>
+function pageTop($Title, $body, $logo){?>
 <!DOCTYPE html>
     <html>
         <head>
@@ -72,9 +72,9 @@ function pageTop($Title){?>
                 <meta charset="UTF-8">
 <title><?= $Title ?></title>
         </head>
-            <body>
+            <body <?php echo $body  ?> >
                 <header>
-                    <img class="logoshow" src="<?php echo IMAGE_LOGO; ?>" alt="Usedspaceship Emporium logo of a racoon in trash spaceship"/>
+                    <img class="<?php echo $logo;?>" src="<?php echo IMAGE_LOGO; ?>" alt="Usedspaceship Emporium logo of a racoon in trash spaceship"/>
                     <nav class="menu-options">
                         <ul>
                             <li><a href="index.php">Homepage</a></li>

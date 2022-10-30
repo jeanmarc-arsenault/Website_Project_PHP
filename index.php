@@ -13,7 +13,7 @@
     $pictures = array(FILE_SS1, FILE_SS2, FILE_SS3, FILE_SS4, FILE_SS5);
     shuffle($pictures);
 
-    pageTop("Home Page");
+    pageTop("Home Page",'class="spaceback"',"logoshow");
 
 ?>
 <div class="description">

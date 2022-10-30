@@ -14,20 +14,45 @@ header{
     text-align: center;
 }
 
-body{
-    background-color: black;
-    color: white;
-    background-image: url("../media/space.jpg");
-}
+
 
 p{
     margin: 10px 10px 10px 10px;
 }
 
+table {
+            width: 90%;
+            height: 100px;
+            border: 1px outset black;
+        }
+
+th,
+td {
+    border: 1px inset black;
+}
+
+
+.print{
+    background-color: white;
+    color: black;
+}
+
+.spaceback{
+    background-color: black;
+    color: white;
+    background-image: url("../media/space.jpg");
+}
 .logoshow{
     height: 80px;
     width: auto;
     float: left;
+}
+
+.logoshowprint{
+    height: 80px;
+    width: auto;
+    float: left;
+    opacity: 0.3;
 }
 
 .menu-options {
