@@ -43,6 +43,19 @@ function manageException($errorObject)
 //trigger_error("custom error" ,E_USER_ERROR);
 //throw new Exception("custom esception");
 
+##extra functions
+function is_decimal($n) {
+    if (is_numeric($n) && floor($n) != $n){
+        return true;
+    }
+    else{
+        return false;
+    }
+    
+}
+
+
+
 
 define("FOLDER_CSS", "css/");
 define("FILE_CSS", FOLDER_CSS. "style.css");
@@ -50,38 +63,29 @@ define("FOLDER_MEDIA", "media/");
 
 define("IMAGE_LOGO", FOLDER_MEDIA . "trashspaceship.jpg");
 define("IMAGE_SPACE_BACKGROUND", FOLDER_MEDIA . "space.jpg");
-function pageTop($Title)
-{
-?>
+function pageTop($Title){?>
 <!DOCTYPE html>
     <html>
         <head>
                 <link rel="stylesheet" href= 
-<?php 
-
-            echo FILE_CSS;
-             
-?>                                              />
+<?php echo FILE_CSS;?>                                              />
                 <meta charset="UTF-8">
-                
-                <title>
-<?= $Title ?>              
-                </title>
+<title><?= $Title ?></title>
         </head>
             <body>
                 <header>
                     <img class="logoshow" src="<?php echo IMAGE_LOGO; ?>" alt="Usedspaceship Emporium logo of a racoon in trash spaceship"/>
-
                     <nav class="menu-options">
                         <ul>
-                            <li><a href="index.php">Home Page</a></li>
+                            <li><a href="index.php">Homepage</a></li>
                             <li><a href="buying.php">Buying</a></li>
                             <li><a href="orders.php">Orders</a></li>
                         </ul>
                     </nav>
                  </header>
-                <div class="container">
-                    <p class="title">Welcome to Usedspaceships Emporium</p>
+                <div>
+                    <p class="title">Welcome to the Tatooine Used Spaceships Emporium</p>
+                </div>
 <?php
 }
 
