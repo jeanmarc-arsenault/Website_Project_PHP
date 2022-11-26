@@ -1,4 +1,13 @@
+<!--#Revision history:
 
+DEVELOPER DATE COMMENTS
+
+Jean-Marc Arsenault (2210969) 2022-11-25 Modified NetBeans project.
+
+
+
+
+-->
 <?php
     define("FOLDER_PHPFUNCTIONS", "common/");
     define("FILE_PHPFUNCTIONS", FOLDER_PHPFUNCTIONS."PHPFunctions.php");
@@ -17,7 +26,7 @@
 
 ?>
 <div class="description">
-    <p>We are a spaceship salvage company based around the outer rim world of tatooine. We have recently opened another salvage yard near Ferenginar. We have expert starship repair crews revamping old classic spaceships to top condition for our clients.</p>
+    <p>We are a spaceship salvage company based around the outer rim world of Tatooine. We have recently opened another salvage yard near Ferenginar. We have expert starship repair crews revamping old classic spaceships to top condition for our clients.</p>
 <div class="<?php
 if($pictures[0] == FILE_SS3)
         {
