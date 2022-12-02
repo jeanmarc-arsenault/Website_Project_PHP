@@ -88,23 +88,10 @@ function securepage()
 
 #global variable
 $loggedUser = "";
-session_cache_expire(time() + 5);
+session_cache_expire(time() + 60*10);
 session_start();#use session variable
 
-if(isset($_POST["user"]))
-{
-    createCookie();
-}
-else {
-    if(isset($_POST["logout"])){
-        deleteCookie();
-    }
-    else
-    {
-      readCookie();  
-    }
 
-}
 
 function readCookie()
 { global $loggedUser;
@@ -157,6 +144,11 @@ function pageTop($Title, $body, $logo){?>
                             <li><a href="index.php">Homepage</a></li>
                             <li><a href="buying.php">Buying</a></li>
                             <li><a href="orders.php">Orders</a></li>
+<?php
+    if($Title == "Buying" || $Title == "Orders"){
+       echo '<li><a href="account.php">Account</a></li>';
+    }
+?>
                         </ul>
                     </nav>
                  </header>

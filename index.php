@@ -2,6 +2,7 @@
 DEVELOPER DATE COMMENTS
 Jean-Marc Arsenault (2210969) 2022-11-25 Modified NetBeans project, and added log erro files.
 Jean-Marc Arsenault (2210969) 2022-11-29 added few new class files and organizing file dependencies.
+Jean-Marc Arsenault (2210969) 2022-12-01 started implementing login on buying and orders plus added blank account page.
 -->
 <?php
 define("FOLDER_PHPFUNCTIONS", "common/");

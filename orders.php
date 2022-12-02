@@ -32,6 +32,22 @@ const OBJECT_CUSTOMERS = OBJECTS_FOLDER . "customers.php";
 
 require_once OBJECT_CUSTOMERS;
 
+if(isset($_POST["user"]))
+{
+    createCookie();
+}
+else {
+        if(isset($_POST["logout"])){
+            deleteCookie();
+        }
+        else
+        {
+          readCookie();  
+        }
+}
+
+
+
     pageTop("Orders",$print, $printlogo);
 ?>
 <a href="data/cheatsheet.txt">Cheat sheet Link</a>

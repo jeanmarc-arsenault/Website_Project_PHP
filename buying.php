@@ -46,7 +46,20 @@ require_once OBJECT_CUSTOMERS;
 
     pageTop("Buying",'class="spaceback"',"logoshow");
 
-  
+    if(isset($_POST["user"]))
+{
+    createCookie();
+}
+else {
+        if(isset($_POST["logout"])){
+            deleteCookie();
+        }
+        else
+        {
+          readCookie();  
+        }
+}
+
 #validation
 if(isset($_POST["buy"]))  #strlen > 20
 {
@@ -139,6 +152,35 @@ if(isset($_POST["buy"]))  #strlen > 20
 }
 
 ?>
+<!--
+login
+-->
+<?php
+if($loggedUser != ""){
+    echo $loggedUser;
+
+?>
+        <form action="buying.php" method="POST">
+            Username:
+            <input type="submit" name="logout" value="Logout">
+        </form>
+<?php
+}
+    else{
+?>
+
+        <form action="buying.php" method="POST">
+            Username:
+            <input type="text" name="user">
+            Password:
+            <input type="text" name="password">
+            <input type="submit" name="login" value="Login">
+        </form>
+<?php
+    }
+?>
+
+
 <div class="description">
     <h1>Emporium Used Spaceship Acquisition Form:</h1>
         <form action="buying.php" method="post">
