@@ -1,43 +1,66 @@
 <?php
-
+define("FOLDER_ORDERS", "data/");
+const OBJECTS_FOLDER = "objects/";
+const OBJECT_CONNECTION = OBJECTS_FOLDER . "DBconnection.php";
 error_reporting(E_ALL);
 set_error_handler("manageError");
 set_exception_handler("manageException");
 
 
-header("...UTF-8");
+header('Content-type: text/html; charset=utf-8');
 //w3c
-header("Expires:tue, 29 novd");
+header("Expires: Sat, 26 Jul 2024 05:00:00 GMT");
 header("Cache-Control:no-cache");
 header("Pragma:no-cache");
 //constants
-define("DEBUGGING", false);
+define("DEBUGGING", true);
 
 function manageError($errorNumber, $errorString, $errorFile, $errorLineNumber)
 {
     if(DEBUGGING)
     {
     echo "errorNumber : $errorNumber \n errorString : $errorString\n errorFile : $errorFile\n errorLineNumber : $errorLineNumber\n";
-            #save detailed error into file
-    die();
+    
+        
+
     }
     else{
       echo "an error has occured contact your administrator";
     }
 
+            //creating errorlog file
+        
+$myFile = fopen(FOLDER_PHPFUNCTIONS ."ErrorLogs.txt", "a") or die("Unable to create the file\n");
+
+fwrite($myFile, date("Y-m-d h:i:sa"). " --  errorNumber : $errorNumber \n errorString : $errorString\n errorFile : $errorFile\n errorLineNumber : $errorLineNumber\n");
+
+
+fclose($myFile); 
+die();
 }
 
 function manageException($errorObject)
 {
     if(DEBUGGING)
     {
-    echo $errorObject-> getLine() . " of the file " . $errorObject-> getFile() . " : "  . $errorObject-> getCode() . ")" ;
-            #save detailed error into file
-    die();
+        echo $errorObject-> getLine() . " of the file " . $errorObject-> getFile() . " : "  . $errorObject-> getCode() . ")\n\n" ;
+
+        
     }
     else{
       echo "an exception has occured contact your administrator";
     }
+    
+        //creating exceptionlog file
+
+        $myFile = fopen(FOLDER_PHPFUNCTIONS . "ErrorLogs.txt", "a") or die("Unable to create the file\n");
+
+        fwrite($myFile, date("Y-m-d h:i:sa") . " --  Exeption: " . $errorObject-> getLine() . " of the file " . $errorObject-> getFile() . " : "  . $errorObject-> getCode() . ")\n\n");
+        
+        fclose($myFile); 
+    
+    die();
+    
 }
 
 //trigger_error("custom error" ,E_USER_ERROR);
@@ -54,6 +77,59 @@ function is_decimal($n) {
     
 }
 
+function securepage()
+{
+        if(  ! isset($_SERVER["HTTPS"]) || $_SERVER["HTTPS"] != "on"){
+        
+        HEADER("Location: https://" . str_replace("8000","4433", $_SERVER ["HTTP_HOST"]) . $_SERVER["REQUEST_URI"]);
+        exit();
+        }
+}
+
+#global variable
+$loggedUser = "";
+session_cache_expire(time() + 5);
+session_start();#use session variable
+
+if(isset($_POST["user"]))
+{
+    createCookie();
+}
+else {
+    if(isset($_POST["logout"])){
+        deleteCookie();
+    }
+    else
+    {
+      readCookie();  
+    }
+
+}
+
+function readCookie()
+{ global $loggedUser;
+
+        if(isset($_SESSION["loggedUser"]))
+        {
+            $loggedUser = $_COOKIE["loggedUser"];
+        }
+}
+
+function createCookie()
+{ //time() + 60 * 60 *24 .... a year               path, domain, secure,http, only
+    setcookie("loggedUser", $_POST["user"], time() + 60*10,"" , "", false, true);
+    header('location: index.php');
+    $_SESSION["loggedUser"] = $_POST["user"];
+    exit();
+}
+
+function deleteCookie()
+{ 
+    setcookie("loggedUser", "", time() - 60 * 10 ,"" , "", false, true);
+    header('location: index.php');
+    session_destroy();
+    exit();
+}
 
 
 
@@ -63,6 +139,7 @@ define("FOLDER_MEDIA", "media/");
 
 define("IMAGE_LOGO", FOLDER_MEDIA . "trashspaceship.jpg");
 define("IMAGE_SPACE_BACKGROUND", FOLDER_MEDIA . "space.jpg");
+
 function pageTop($Title, $body, $logo){?>
 <!DOCTYPE html>
     <html>
@@ -93,7 +170,7 @@ function pageBottom()
 {
 ?>
                 </div>
-                <footer>Copyright Jean-Marc Arsenault (202210969) 
+                <footer>Copyright Jean-Marc Arsenault (2210969) 
 <?=
                     date("Y");
 ?>. </footer>

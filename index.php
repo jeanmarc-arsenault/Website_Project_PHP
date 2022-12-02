@@ -1,24 +1,26 @@
 <!--#Revision history:
-
 DEVELOPER DATE COMMENTS
-
-Jean-Marc Arsenault (2210969) 2022-11-25 Modified NetBeans project.
-
-
-
-
+Jean-Marc Arsenault (2210969) 2022-11-25 Modified NetBeans project, and added log erro files.
+Jean-Marc Arsenault (2210969) 2022-11-29 added few new class files and organizing file dependencies.
 -->
 <?php
-    define("FOLDER_PHPFUNCTIONS", "common/");
-    define("FILE_PHPFUNCTIONS", FOLDER_PHPFUNCTIONS."PHPFunctions.php");
-    require_once FILE_PHPFUNCTIONS;
-    define("FOLDER_PICTURES", "media/");
-    define("FILE_SS1", FOLDER_PICTURES . "spaceship1.jpg");
-    define("FILE_SS2", FOLDER_PICTURES . "spaceship2.jpg");
-    define("FILE_SS3", FOLDER_PICTURES . "spaceship3.jpg");
-    define("FILE_SS4", FOLDER_PICTURES . "spaceship4.jpg");
-    define("FILE_SS5", FOLDER_PICTURES . "spaceship5.jpg");
+define("FOLDER_PHPFUNCTIONS", "common/");
+define("FILE_PHPFUNCTIONS", FOLDER_PHPFUNCTIONS."PHPFunctions.php");
+require_once FILE_PHPFUNCTIONS;
 
+define("FOLDER_PICTURES", "media/");
+define("FILE_SS1", FOLDER_PICTURES . "spaceship1.jpg");
+define("FILE_SS2", FOLDER_PICTURES . "spaceship2.jpg");
+define("FILE_SS3", FOLDER_PICTURES . "spaceship3.jpg");
+define("FILE_SS4", FOLDER_PICTURES . "spaceship4.jpg");
+define("FILE_SS5", FOLDER_PICTURES . "spaceship5.jpg");
+
+//secure https and cookie
+securepage();
+
+
+    
+    
     $pictures = array(FILE_SS1, FILE_SS2, FILE_SS3, FILE_SS4, FILE_SS5);
     shuffle($pictures);
 
@@ -28,7 +30,7 @@ Jean-Marc Arsenault (2210969) 2022-11-25 Modified NetBeans project.
 <div class="description">
     <p>We are a spaceship salvage company based around the outer rim world of Tatooine. We have recently opened another salvage yard near Ferenginar. We have expert starship repair crews revamping old classic spaceships to top condition for our clients.</p>
 <div class="<?php
-if($pictures[0] == FILE_SS3)
+    if($pictures[0] == FILE_SS3)
         {
             echo 'special';
         }
@@ -73,7 +75,6 @@ if($pictures[0] == FILE_SS3)
             
 ?>
             " src="<?php echo $pictures[0]; ?>" alt="nice space trash"/></a>
-            
 <div/>
 
 

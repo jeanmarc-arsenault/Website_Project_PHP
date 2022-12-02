@@ -23,8 +23,6 @@ $qty = "";
 $subtotal= "";
 $taxes= "";
 $grandtotal= "";
-
-
 $validationErrorPrdcode = "";
 $validationErrorFname = "";
 $validationErrorLname = "";
@@ -34,18 +32,21 @@ $validationErrorPrice = "";
 $validationErrorQty = "";
 $errorOccured = false;
 $orderConfirmation = "";
+//////////////////////////////////////////
+define("FOLDER_PHPFUNCTIONS", "common/");
+define("FILE_PHPFUNCTIONS", FOLDER_PHPFUNCTIONS."PHPFunctions.php");
+require_once FILE_PHPFUNCTIONS;
+//object and DB
+
+const OBJECT_CUSTOMERS = OBJECTS_FOLDER . "customers.php";
 
 
+require_once OBJECT_CUSTOMERS;
+///////////////////
 
-    define("FOLDER_PHPFUNCTIONS", "common/");
-    define("FOLDER_ORDERS", "data/");
-    define("FILE_ORDERS", FOLDER_ORDERS."orders.json");
-    define("FILE_PHPFUNCTIONS", FOLDER_PHPFUNCTIONS."PHPFunctions.php");
-    require_once FILE_PHPFUNCTIONS;
     pageTop("Buying",'class="spaceback"',"logoshow");
 
-    
-    
+  
 #validation
 if(isset($_POST["buy"]))  #strlen > 20
 {

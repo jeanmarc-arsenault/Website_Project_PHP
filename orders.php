@@ -22,12 +22,16 @@ $color="";
         }
 
 
+define("FOLDER_PHPFUNCTIONS", "common/");
+define("FILE_PHPFUNCTIONS", FOLDER_PHPFUNCTIONS."PHPFunctions.php");
+require_once FILE_PHPFUNCTIONS;
+//object and DB
 
-    define("FOLDER_PHPFUNCTIONS", "common/");
-    define("FOLDER_ORDERS", "data/");
-    define("FILE_ORDERS", FOLDER_ORDERS."orders.json");
-    define("FILE_PHPFUNCTIONS", FOLDER_PHPFUNCTIONS."PHPFunctions.php");
-    require_once FILE_PHPFUNCTIONS;
+const OBJECT_CUSTOMERS = OBJECTS_FOLDER . "customers.php";
+
+
+require_once OBJECT_CUSTOMERS;
+
     pageTop("Orders",$print, $printlogo);
 ?>
 <a href="data/cheatsheet.txt">Cheat sheet Link</a>
