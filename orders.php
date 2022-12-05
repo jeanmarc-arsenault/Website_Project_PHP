@@ -15,13 +15,16 @@ $print='class="spaceback"';
 $printlogo="logoshow";
 $color="";
 
+//secure https and cookie
+
+
        if(isset($_GET["action"]) && strtoupper($_GET["action"]) == strtoupper("print"))
         {
             $print ='class="print"';
             $printlogo ="logoshowprint";
         }
 
-
+define("ORDERS_PAGE", "orders.php");
 define("FOLDER_PHPFUNCTIONS", "common/");
 define("FILE_PHPFUNCTIONS", FOLDER_PHPFUNCTIONS."PHPFunctions.php");
 require_once FILE_PHPFUNCTIONS;
@@ -32,13 +35,21 @@ const OBJECT_CUSTOMERS = OBJECTS_FOLDER . "customers.php";
 
 require_once OBJECT_CUSTOMERS;
 
-if(isset($_POST["user"]))
+securepage();
+
+
+
+
+    pageTop("Orders",$print, $printlogo);
+    
+    
+    if(isset($_POST["user"]))
 {
-    createCookie();
+    createCookie(ORDERS_PAGE);
 }
 else {
         if(isset($_POST["logout"])){
-            deleteCookie();
+            deleteCookie(ORDERS_PAGE);
         }
         else
         {
@@ -46,15 +57,22 @@ else {
         }
 }
 
-
-
-    pageTop("Orders",$print, $printlogo);
+    
+    
 ?>
 <a href="data/cheatsheet.txt">Cheat sheet Link</a>
 <?php
 
+if($loggedUser != ""){
+    echo $loggedUser;
 
+?>
+        <form action="orders.php" method="POST">
+            Username:
+            <input type="submit" name="logout" value="Logout">
+        </form>
 
+<?php
 
 
     $orderFile = fopen(FILE_ORDERS, "r") or die("Unable to open the file\n");
@@ -132,17 +150,21 @@ else {
             }
         }
         fclose($orderFile);
+}
 
+    else{
 ?>
 
- 
+        <form action="orders.php" method="POST">
+            Username:
+            <input type="text" name="user">
+            Password:
+            <input type="text" name="password">
+            <input type="submit" name="login" value="Login">
+        </form>
 <?php
-        // put your code here
-        
-      
-?>
+    }
 
-<?php
                 pageBottom();
-?>
+
 

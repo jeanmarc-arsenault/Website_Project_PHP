@@ -3,14 +3,14 @@
 DEVELOPER DATE COMMENTS
 
 Jean-Marc Arsenault (2210969) 2022-11-25 Modified NetBeans project.
-
-
+Jean-Marc Arsenault (2210969) 2022-12-01 started implementing login on buying and orders plus added blank account page.
+Jean-Marc Arsenault (2210969) 2022-12-03 worked on login .
 
 
 -->
-
-
 <?php
+//secure https and cookie
+
 
 #declare variables
 $prdcode = "";
@@ -32,9 +32,16 @@ $validationErrorPrice = "";
 $validationErrorQty = "";
 $errorOccured = false;
 $orderConfirmation = "";
+$username = "";
+$password = "";
 //////////////////////////////////////////
 define("FOLDER_PHPFUNCTIONS", "common/");
 define("FILE_PHPFUNCTIONS", FOLDER_PHPFUNCTIONS."PHPFunctions.php");
+
+
+define("BUYING_PAGE", "buying.php");
+
+
 require_once FILE_PHPFUNCTIONS;
 //object and DB
 
@@ -48,15 +55,24 @@ require_once OBJECT_CUSTOMERS;
 
     if(isset($_POST["user"]))
 {
-    createCookie();
-}
-else {
-        if(isset($_POST["logout"])){
-            deleteCookie();
+        
+        if(login($password ,$username))
+        {        
+            createCookie(BUYING_PAGE);
         }
         else
         {
-          readCookie();  
+            echo "Invalid login";
+            $loggedUser = "";
+        }
+}
+else {
+        if(isset($_POST["logout"])){
+            deleteCookie(BUYING_PAGE);
+        }
+        else
+        {
+          readCookie();
         }
 }
 
@@ -157,6 +173,8 @@ login
 -->
 <?php
 if($loggedUser != ""){
+    
+    
     echo $loggedUser;
 
 ?>
@@ -164,22 +182,6 @@ if($loggedUser != ""){
             Username:
             <input type="submit" name="logout" value="Logout">
         </form>
-<?php
-}
-    else{
-?>
-
-        <form action="buying.php" method="POST">
-            Username:
-            <input type="text" name="user">
-            Password:
-            <input type="text" name="password">
-            <input type="submit" name="login" value="Login">
-        </form>
-<?php
-    }
-?>
-
 
 <div class="description">
     <h1>Emporium Used Spaceship Acquisition Form:</h1>
@@ -189,7 +191,7 @@ if($loggedUser != ""){
                     <input type="text" name="prdcode" value="<?php echo $prdcode;?>"> 
                     <span style="color:red">
 <?php
-                    echo $validationErrorPrdcode;           
+                    echo $validationErrorPrdcode;
 ?>
                                          </span>
             </p>
@@ -286,5 +288,29 @@ echo $qty;
                                          </span>
     </div>
 
+
+
 <?php
+}
+    else{
+?>
+
+        <form action="buying.php" method="POST">
+            Username:
+            <input type="text" name="user"  value="
+<?php
+echo $username;
+?>
+">
+            Password:
+            <input type="text" name="password"  value="
+<?php
+echo $password;
+?>
+">
+            <input type="submit" name="login" value="Login">
+        </form>
+<?php
+    }
+
                 pageBottom();

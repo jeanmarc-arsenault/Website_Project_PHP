@@ -2,7 +2,7 @@
 DEVELOPER DATE COMMENTS
 Jean-Marc Arsenault (2210969) 2022-11-25 Modified NetBeans project, and added log erro files.
 Jean-Marc Arsenault (2210969) 2022-11-29 added few new class files and organizing file dependencies.
-Jean-Marc Arsenault (2210969) 2022-12-01 started implementing login on buying and orders plus added blank account page.
+Jean-Marc Arsenault (2210969) 2022-12-03 worked on login .
 -->
 <?php
 define("FOLDER_PHPFUNCTIONS", "common/");
@@ -20,14 +20,14 @@ define("FILE_SS5", FOLDER_PICTURES . "spaceship5.jpg");
 securepage();
 
 
-    
-    
-    $pictures = array(FILE_SS1, FILE_SS2, FILE_SS3, FILE_SS4, FILE_SS5);
-    shuffle($pictures);
 
-    pageTop("Home Page",'class="spaceback"',"logoshow");
+$pictures = array(FILE_SS1, FILE_SS2, FILE_SS3, FILE_SS4, FILE_SS5);
+shuffle($pictures);
+
+pageTop("Home Page",'class="spaceback"',"logoshow");
 
 ?>
+
 <div class="description">
     <p>We are a spaceship salvage company based around the outer rim world of Tatooine. We have recently opened another salvage yard near Ferenginar. We have expert starship repair crews revamping old classic spaceships to top condition for our clients.</p>
 <div class="<?php

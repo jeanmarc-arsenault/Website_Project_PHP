@@ -18,3 +18,95 @@
 
 2022-12-01 09:31:05pm --  Exeption: 60 of the file C:\xampp\htdocs\202210969\orders.php : 0)
 
+2022-12-03 11:20:47am --  Exeption: 65 of the file C:\xampp\htdocs\202210969\orders.php : 0)
+
+2022-12-03 11:20:53am --  Exeption: 65 of the file C:\xampp\htdocs\202210969\orders.php : 0)
+
+2022-12-03 11:21:23am --  Exeption: 65 of the file C:\xampp\htdocs\202210969\orders.php : 0)
+
+2022-12-03 11:23:59am --  Exeption: 65 of the file C:\xampp\htdocs\202210969\orders.php : 0)
+
+2022-12-03 11:40:25am --  errorNumber : 2 
+ errorString : Undefined array key "loggedUser"
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 101
+2022-12-03 12:07:55pm --  Exeption: 70 of the file C:\xampp\htdocs\202210969\orders.php : 0)
+
+2022-12-03 12:13:55pm --  Exeption: 78 of the file C:\xampp\htdocs\202210969\orders.php : 0)
+
+2022-12-03 01:07:14pm --  errorNumber : 2 
+ errorString : Undefined variable $password
+ errorFile : C:\xampp\htdocs\202210969\index.php
+ errorLineNumber : 29
+2022-12-03 01:07:21pm --  errorNumber : 2 
+ errorString : Undefined variable $password
+ errorFile : C:\xampp\htdocs\202210969\index.php
+ errorLineNumber : 29
+2022-12-03 01:08:03pm --  Exeption: 29 of the file C:\xampp\htdocs\202210969\index.php : 0)
+
+2022-12-03 01:08:08pm --  Exeption: 29 of the file C:\xampp\htdocs\202210969\index.php : 0)
+
+2022-12-03 01:09:07pm --  Exeption: 29 of the file C:\xampp\htdocs\202210969\index.php : 0)
+
+2022-12-03 01:12:00pm --  errorNumber : 2 
+ errorString : Undefined variable $username
+ errorFile : C:\xampp\htdocs\202210969\buying.php
+ errorLineNumber : 298
+2022-12-03 01:12:54pm --  errorNumber : 2 
+ errorString : Undefined variable $username
+ errorFile : C:\xampp\htdocs\202210969\buying.php
+ errorLineNumber : 298
+2022-12-03 01:12:57pm --  errorNumber : 2 
+ errorString : Undefined variable $username
+ errorFile : C:\xampp\htdocs\202210969\buying.php
+ errorLineNumber : 298
+2022-12-03 01:14:44pm --  errorNumber : 2 
+ errorString : Undefined variable $connection
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 99
+2022-12-03 01:28:51pm --  Exeption: 21 of the file C:\xampp\htdocs\202210969\objects\customer.php : 0)
+
+2022-12-03 01:36:43pm --  Exeption: 214 of the file C:\xampp\htdocs\202210969\objects\customer.php : 42S22)
+
+2022-12-03 01:38:12pm --  Exeption: 214 of the file C:\xampp\htdocs\202210969\objects\customer.php : 42S22)
+
+2022-12-03 03:20:38pm --  Exeption: 78 of the file C:\xampp\htdocs\202210969\orders.php : 0)
+
+2022-12-03 03:22:46pm --  Exeption: 225 of the file C:\xampp\htdocs\202210969\objects\customer.php : 42S22)
+
+2022-12-03 03:23:34pm --  Exeption: 225 of the file C:\xampp\htdocs\202210969\objects\customer.php : 42S22)
+
+2022-12-03 03:23:43pm --  Exeption: 225 of the file C:\xampp\htdocs\202210969\objects\customer.php : 42000)
+
+2022-12-03 03:24:36pm --  Exeption: 225 of the file C:\xampp\htdocs\202210969\objects\customer.php : 42S22)
+
+2022-12-03 03:30:46pm --  Exeption: 225 of the file C:\xampp\htdocs\202210969\objects\customer.php : 42S22)
+
+2022-12-03 03:31:54pm --  Exeption: 225 of the file C:\xampp\htdocs\202210969\objects\customer.php : 42S22)
+
+2022-12-03 03:38:48pm --  Exeption: 225 of the file C:\xampp\htdocs\202210969\objects\customer.php : 42S22)
+
+2022-12-03 03:38:56pm --  Exeption: 225 of the file C:\xampp\htdocs\202210969\objects\customer.php : 42S22)
+
+2022-12-03 03:39:01pm --  Exeption: 225 of the file C:\xampp\htdocs\202210969\objects\customer.php : 42S22)
+
+2022-12-03 03:39:24pm --  Exeption: 225 of the file C:\xampp\htdocs\202210969\objects\customer.php : 42S22)
+
+2022-12-03 03:41:07pm --  Exeption: 225 of the file C:\xampp\htdocs\202210969\objects\customer.php : 42S22)
+
+2022-12-03 03:41:11pm --  Exeption: 225 of the file C:\xampp\htdocs\202210969\objects\customer.php : 42S22)
+
+2022-12-03 03:41:16pm --  Exeption: 225 of the file C:\xampp\htdocs\202210969\objects\customer.php : 42S22)
+
+2022-12-03 03:52:32pm --  Exeption: 59 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-03 03:56:07pm --  Exeption: 101 of the file C:\xampp\htdocs\202210969\common\PHPFunctions.php : 42S22)
+
+2022-12-03 03:59:10pm --  Exeption: 101 of the file C:\xampp\htdocs\202210969\common\PHPFunctions.php : 42S22)
+
+2022-12-03 03:59:14pm --  Exeption: 101 of the file C:\xampp\htdocs\202210969\common\PHPFunctions.php : 42S22)
+
+2022-12-03 03:59:20pm --  Exeption: 101 of the file C:\xampp\htdocs\202210969\common\PHPFunctions.php : 42S22)
+
+2022-12-03 04:02:31pm --  Exeption: 101 of the file C:\xampp\htdocs\202210969\common\PHPFunctions.php : 42S22)
+

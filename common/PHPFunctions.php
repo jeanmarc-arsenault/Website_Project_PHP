@@ -1,3 +1,11 @@
+<!--#Revision history:
+DEVELOPER DATE COMMENTS
+Jean-Marc Arsenault (2210969) 2022-11-25 Modified NetBeans project, and added log erro files..
+Jean-Marc Arsenault (2210969) 2022-12-03 worked on login .
+-->
+
+
+
 <?php
 define("FOLDER_ORDERS", "data/");
 const OBJECTS_FOLDER = "objects/";
@@ -92,6 +100,25 @@ session_cache_expire(time() + 60*10);
 session_start();#use session variable
 
 
+function login($username, $password)
+    { 
+        global $connection;
+        $dbpassword = password_hash($password, PASSWORD_DEFAULT);
+        $SQLquery = "CALL `customer_login`($dbpassword, $username);";
+        
+        $rows = $connection->prepare($SQLquery);
+        
+        if($rows->execute()){
+            
+            if($rows != ""){
+                return true;
+            }
+            else{
+                  return false;
+            }
+        }
+
+    }
 
 function readCookie()
 { global $loggedUser;
@@ -102,18 +129,18 @@ function readCookie()
         }
 }
 
-function createCookie()
+function createCookie($page)
 { //time() + 60 * 60 *24 .... a year               path, domain, secure,http, only
     setcookie("loggedUser", $_POST["user"], time() + 60*10,"" , "", false, true);
-    header('location: index.php');
+    header('location: ' . $page);
     $_SESSION["loggedUser"] = $_POST["user"];
     exit();
 }
 
-function deleteCookie()
+function deleteCookie($page)
 { 
     setcookie("loggedUser", "", time() - 60 * 10 ,"" , "", false, true);
-    header('location: index.php');
+    header('location: ' . $page);
     session_destroy();
     exit();
 }

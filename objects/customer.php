@@ -12,19 +12,26 @@ require_once OBJECT_CONNECTION;
     //define dont work in object
     
     const NAME_MAX_LENGHT =20;
+    const USERNAME_MAX_LENGHT =7;
 
 //variables
     private $firstname = "";
     private $cid = "";
-    public function __construct($newCustomerId ="", $newName = "")
+    private $lastname ="";
+    private $adress ="";
+    private $city ="";
+    private $postalcode ="";
+    private $picture ="";
+    
+    public function __construct($newCustomerId ="", $newFName = "", $newLName = "",$newAdress = "", $newCity = "", $newPostalCode = "", $newPicture = "" )
     {
-        $this->setPlayerId($newCustomerId);
-        $this->setName($newName);
+        $this->setFirstName($newFName);
+        $this->setLastName($newLName);
+        $this->setLastName($newAdress);
+        $this->setLastName($newCity);
+        $this->setLastName($newPostalCode);
+        $this->setLastName($newPicture);
         
-    }
-    public function setCustomerId()
-    {
-        return $this->cid;
     }
     
     public function getCustomerId($newCustomerId)
@@ -43,51 +50,78 @@ require_once OBJECT_CONNECTION;
     {
         return $this->firstname;
     }
-    public function setFirstName($newName)
+    public function setFirstName($newFName)
     {
-        if($newName == "")
+        if($newFName == "")
         {
             return "firstname canot be empty";
         }
         else
         {
-            if(mb_strlen($newName) > self::NAME_MAX_LENGHT)
+            if(mb_strlen($newFName) > self::NAME_MAX_LENGHT)
             {
                 return "first name canot be longer than " . self::NAME_MAX_LENGHT . " characters";
             }
             else
             {
-                $this->firstname = $newName;
+                $this->firstname = $newFName;
                 return true;
             }
             
         }
     }
     
+    
     public function getLastName()
     {
         return $this->lasttname;
     }
-    public function setLastName($newName)
+    public function setLastName($newLName)
     {
-        if($newName == "")
+        if($newLName == "")
         {
             return "lastname canot be empty";
         }
         else
         {
-            if(mb_strlen($newName) > self::NAME_MAX_LENGHT)
+            if(mb_strlen($newLName) > self::NAME_MAX_LENGHT)
             {
                 return "lastname canot be longer than " . self::NAME_MAX_LENGHT . " characters";
             }
             else
             {
-                $this->lastname = $newName;
+                $this->lastname = $newLName;
                 return true;
             }
             
         }
     }    
+    
+    public function getUsername()
+    {
+        return $this->username;
+    }
+    public function setUsername($newName)
+    {
+        if($newName == "")
+        {
+            return "username canot be empty";
+        }
+        else
+        {
+            if(mb_strlen($newName) > self::USERNAME_MAX_LENGHT)
+            {
+                return "username canot be longer than " . self::USERNAME_MAX_LENGHT . " characters";
+            }
+            else
+            {
+                $this->username = $newName;
+                return true;
+            }
+            
+        }
+    } 
+
     
     
     //Methhods

@@ -17,7 +17,7 @@ class customers extends collection
     function __construct()
     {
         global $connection;
-        $SQLquery = "Select * From customers order by firstname";
+        $SQLquery = "CALL `select_all_customers`()";
         
         $rows = $connection->prepare($SQLquery);
         
@@ -25,7 +25,7 @@ class customers extends collection
                 
                 while($row = $rows->fetch())
                 {
-                    $customer = new customer($row["cid"], $row["firstname"]);
+                    $customer = new customer($row["cid"], $row["firstname"], $row["lastname"], $row["adress"], $row["city"], $row["postalcode"], $row["picture"]);
                     
                     $this->add($row["cid"],$customer);
                 }
