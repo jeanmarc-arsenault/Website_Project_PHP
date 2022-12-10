@@ -8,12 +8,22 @@ Jean-Marc Arsenault (2210969) 2022-12-03 worked on login .
 
 <?php
 define("FOLDER_ORDERS", "data/");
+define("HOME_PAGE", "index.php");
+define("ORDERS_PAGE", "orders.php");
+define("BUYING_PAGE", "buying.php");
 const OBJECTS_FOLDER = "objects/";
+const OBJECT_COLLECTION = OBJECTS_FOLDER . "collection.php";
+const OBJECT_CUSTOMER = OBJECTS_FOLDER . "customer.php";
 const OBJECT_CONNECTION = OBJECTS_FOLDER . "DBconnection.php";
+const OBJECT_CUSTOMERS = OBJECTS_FOLDER . "customers.php";
+require_once OBJECT_CONNECTION;
+require_once OBJECT_CUSTOMER;
+require_once OBJECT_COLLECTION;
+require_once OBJECT_CUSTOMERS;
+
 error_reporting(E_ALL);
 set_error_handler("manageError");
 set_exception_handler("manageException");
-
 
 header('Content-type: text/html; charset=utf-8');
 //w3c
@@ -23,17 +33,17 @@ header("Pragma:no-cache");
 //constants
 define("DEBUGGING", true);
 
+$globalCID = "";
+
 function manageError($errorNumber, $errorString, $errorFile, $errorLineNumber)
 {
     if(DEBUGGING)
     {
     echo "errorNumber : $errorNumber \n errorString : $errorString\n errorFile : $errorFile\n errorLineNumber : $errorLineNumber\n";
-    
-        
 
     }
     else{
-      echo "an error has occured contact your administrator";
+      echo "An error has occured contact your administrator";
     }
 
             //creating errorlog file
@@ -51,12 +61,12 @@ function manageException($errorObject)
 {
     if(DEBUGGING)
     {
-        echo $errorObject-> getLine() . " of the file " . $errorObject-> getFile() . " : "  . $errorObject-> getCode() . ")\n\n" ;
+        echo "Exeption: " . $errorObject-> getLine() . " of the file " . $errorObject-> getFile() . " : "  . $errorObject-> getCode() . ")\n\n" ;
 
         
     }
     else{
-      echo "an exception has occured contact your administrator";
+      echo "An exception has occured contact your administrator";
     }
     
         //creating exceptionlog file
@@ -93,64 +103,71 @@ function securepage()
         exit();
         }
 }
-
+///////////////////////////////
 #global variable
-$loggedUser = "";
+$loggedUser = null;
+$loggedcustomer = null;
 session_cache_expire(time() + 60*10);
 session_start();#use session variable
+$cid= "";
+$password= "";
 
-
-function login($username, $password)
-    { 
-        global $connection;
-        $dbpassword = password_hash($password, PASSWORD_DEFAULT);
-        $SQLquery = "CALL `customer_login`($dbpassword, $username);";
-        
-        $rows = $connection->prepare($SQLquery);
-        
-        if($rows->execute()){
-            
-            if($rows != ""){
+function login($username, $pass,)
+{ 
+    global $connection;
+    $SQLquery = "CALL customer_login(:username)";
+    $rows=$connection->prepare($SQLquery);
+    $rows->bindParam(":username",$username, PDO::PARAM_STR);
+    if($rows->execute())
+    {
+        while ($row = $rows->fetch())
+        {   
+            if(password_verify($pass, $row["password"]))
+            {
+                //create cookie 
+                $_SESSION["loggedUser"] = $row["cid"];
+                $page = $_SERVER['SCRIPT_NAME'];
+                header('location: ' . $page);
                 return true;
+                
+
             }
             else{
-                  return false;
+                   return false;
             }
         }
-
     }
+}
 
 function readCookie()
-{ global $loggedUser;
-
-        if(isset($_SESSION["loggedUser"]))
-        {
-            $loggedUser = $_COOKIE["loggedUser"];
-        }
-}
-
-function createCookie($page)
-{ //time() + 60 * 60 *24 .... a year               path, domain, secure,http, only
-    setcookie("loggedUser", $_POST["user"], time() + 60*10,"" , "", false, true);
-    header('location: ' . $page);
-    $_SESSION["loggedUser"] = $_POST["user"];
-    exit();
-}
-
-function deleteCookie($page)
 { 
-    setcookie("loggedUser", "", time() - 60 * 10 ,"" , "", false, true);
-    header('location: ' . $page);
+    global $loggedUser;
+    global $loggedcustomer;
+    if(isset($_SESSION["loggedUser"]))
+    {
+         
+        $loggedUser = $_SESSION["loggedUser"];
+        $loggedcustomer = new Customer();
+        $loggedcustomer->load($_SESSION["loggedUser"]);
+    }
+}
+
+function deleteCookie()
+{ 
+    global $loggedUser;
+    global $loggedcustomer;
+    $_SESSION["loggedUser"] = null;
+    $loggedcustomer = null;
+    header('location: ' . $_SERVER['SCRIPT_NAME']);
     session_destroy();
     exit();
 }
 
-
+///////////////////////////////
 
 define("FOLDER_CSS", "css/");
-define("FILE_CSS", FOLDER_CSS. "style.css");
+define("FILE_CSS", FOLDER_CSS . "style.css");
 define("FOLDER_MEDIA", "media/");
-
 define("IMAGE_LOGO", FOLDER_MEDIA . "trashspaceship.jpg");
 define("IMAGE_SPACE_BACKGROUND", FOLDER_MEDIA . "space.jpg");
 
@@ -158,8 +175,7 @@ function pageTop($Title, $body, $logo){?>
 <!DOCTYPE html>
     <html>
         <head>
-                <link rel="stylesheet" href= 
-<?php echo FILE_CSS;?>                                              />
+                <link rel="stylesheet" href= <?php echo FILE_CSS; ?>>
                 <meta charset="UTF-8">
 <title><?= $Title ?></title>
         </head>

@@ -1,5 +1,10 @@
+
+
 <?php
 #declare variables
+
+#search 2022/12/1
+
 $prdcode = "";
 $fname = "";
 $lname = "";
@@ -24,38 +29,19 @@ $color="";
             $printlogo ="logoshowprint";
         }
 
-define("ORDERS_PAGE", "orders.php");
+
 define("FOLDER_PHPFUNCTIONS", "common/");
 define("FILE_PHPFUNCTIONS", FOLDER_PHPFUNCTIONS."PHPFunctions.php");
 require_once FILE_PHPFUNCTIONS;
 //object and DB
 
-const OBJECT_CUSTOMERS = OBJECTS_FOLDER . "customers.php";
-
-
-require_once OBJECT_CUSTOMERS;
 
 securepage();
 
-
-
-
-    pageTop("Orders",$print, $printlogo);
+pageTop("Orders",$print, $printlogo);
     
     
-    if(isset($_POST["user"]))
-{
-    createCookie(ORDERS_PAGE);
-}
-else {
-        if(isset($_POST["logout"])){
-            deleteCookie(ORDERS_PAGE);
-        }
-        else
-        {
-          readCookie();  
-        }
-}
+
 
     
     
@@ -64,11 +50,9 @@ else {
 <?php
 
 if($loggedUser != ""){
-    echo $loggedUser;
-
 ?>
         <form action="orders.php" method="POST">
-            Username:
+            Username: <?php echo "Welcome " . $loggedcustomer->firstname . " " . $loggedcustomer->lastname ?>
             <input type="submit" name="logout" value="Logout">
         </form>
 

@@ -32,47 +32,39 @@ $validationErrorPrice = "";
 $validationErrorQty = "";
 $errorOccured = false;
 $orderConfirmation = "";
-$username = "";
-$password = "";
+
 //////////////////////////////////////////
 define("FOLDER_PHPFUNCTIONS", "common/");
 define("FILE_PHPFUNCTIONS", FOLDER_PHPFUNCTIONS."PHPFunctions.php");
 
-
-define("BUYING_PAGE", "buying.php");
-
-
 require_once FILE_PHPFUNCTIONS;
 //object and DB
 
-const OBJECT_CUSTOMERS = OBJECTS_FOLDER . "customers.php";
 
-
-require_once OBJECT_CUSTOMERS;
 ///////////////////
 
     pageTop("Buying",'class="spaceback"',"logoshow");
 
-    if(isset($_POST["user"]))
-{
-        
-        if(login($password ,$username))
-        {        
-            createCookie(BUYING_PAGE);
+if(isset($_POST["user"])) {
+        $username=$_POST["user"];
+        $pass=$_POST["password"];  
+        if(login($username, $pass)){
+            
+            exit();
         }
-        else
-        {
+        else{
             echo "Invalid login";
-            $loggedUser = "";
-        }
+            $loggedUser = null;
+            $loggedcustomer = null;
+        }         
 }
 else {
         if(isset($_POST["logout"])){
-            deleteCookie(BUYING_PAGE);
+            deleteCookie();
         }
         else
         {
-          readCookie();
+            readCookie();
         }
 }
 
@@ -152,9 +144,10 @@ if(isset($_POST["buy"]))  #strlen > 20
         $grandtotal =   round($subtotal+ $taxes, 2);
         $orderConfirmation = "Your order has be recorded!"."---> Subtotal: ".$subtotal."$---> taxes amount : ".$taxes. "$---> Grand total: ".$grandtotal."$";
         
-        #save data on file
-        $order = array($prdcode, $fname, $lname, $city, $com, $price, $qty, $subtotal,$taxes,$grandtotal);
-        file_put_contents(FILE_ORDERS, json_encode($order)."\r\n", FILE_APPEND);
+        #save data in database
+        
+//        $order = array($prdcode, $fname, $lname, $city, $com, $price, $qty, $subtotal,$taxes,$grandtotal);
+//        file_put_contents(FILE_ORDERS, json_encode($order)."\r\n", FILE_APPEND);
 
         #clear the fields
         $prdcode = "";
@@ -173,13 +166,14 @@ login
 -->
 <?php
 if($loggedUser != ""){
-    
-    
-    echo $loggedUser;
+
+    echo "Welcome " . $loggedcustomer->getFirstName() . " " . $loggedcustomer->getLastName();
 
 ?>
         <form action="buying.php" method="POST">
-            Username:
+<?php   
+        
+?>
             <input type="submit" name="logout" value="Logout">
         </form>
 
@@ -297,17 +291,9 @@ echo $qty;
 
         <form action="buying.php" method="POST">
             Username:
-            <input type="text" name="user"  value="
-<?php
-echo $username;
-?>
-">
+            <input type="text" name="user">
             Password:
-            <input type="text" name="password"  value="
-<?php
-echo $password;
-?>
-">
+            <input type="text" name="password">
             <input type="submit" name="login" value="Login">
         </form>
 <?php

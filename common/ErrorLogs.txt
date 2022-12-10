@@ -110,3 +110,379 @@
 
 2022-12-03 04:02:31pm --  Exeption: 101 of the file C:\xampp\htdocs\202210969\common\PHPFunctions.php : 42S22)
 
+2022-12-05 10:38:19am --  Exeption: 109 of the file C:\xampp\htdocs\202210969\common\PHPFunctions.php : 42S22)
+
+2022-12-05 03:50:56pm --  Exeption: 109 of the file C:\xampp\htdocs\202210969\common\PHPFunctions.php : 42S22)
+
+2022-12-05 04:10:50pm --  Exeption: 109 of the file C:\xampp\htdocs\202210969\common\PHPFunctions.php : HY093)
+
+2022-12-05 04:12:55pm --  Exeption: 109 of the file C:\xampp\htdocs\202210969\common\PHPFunctions.php : HY093)
+
+2022-12-05 04:13:01pm --  Exeption: 109 of the file C:\xampp\htdocs\202210969\common\PHPFunctions.php : HY093)
+
+2022-12-05 04:13:07pm --  Exeption: 109 of the file C:\xampp\htdocs\202210969\common\PHPFunctions.php : HY093)
+
+2022-12-06 06:23:53pm --  errorNumber : 2 
+ errorString : Undefined variable $loggedcustomer
+ errorFile : C:\xampp\htdocs\202210969\buying.php
+ errorLineNumber : 179
+2022-12-06 06:25:21pm --  errorNumber : 2 
+ errorString : Attempt to read property "firstname" on null
+ errorFile : C:\xampp\htdocs\202210969\buying.php
+ errorLineNumber : 179
+2022-12-06 06:25:27pm --  errorNumber : 2 
+ errorString : Attempt to read property "firstname" on null
+ errorFile : C:\xampp\htdocs\202210969\buying.php
+ errorLineNumber : 179
+2022-12-06 06:27:20pm --  Exeption: 179 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-06 06:29:00pm --  Exeption: 180 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-06 06:29:04pm --  Exeption: 180 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-06 06:30:49pm --  Exeption: 180 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-06 06:30:52pm --  Exeption: 180 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-06 06:30:52pm --  Exeption: 180 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-06 06:30:52pm --  Exeption: 180 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-06 06:30:53pm --  Exeption: 180 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-06 06:30:53pm --  Exeption: 180 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-06 06:32:18pm --  Exeption: 180 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-06 06:37:15pm --  errorNumber : 2 
+ errorString : Constant OBJECT_CUSTOMER already defined
+ errorFile : C:\xampp\htdocs\202210969\objects\customers.php
+ errorLineNumber : 7
+2022-12-06 06:39:53pm --  Exeption: 178 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-06 06:39:58pm --  Exeption: 178 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-07 11:04:10am --  errorNumber : 2 
+ errorString : Undefined array key "firstname"
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 127
+2022-12-07 11:06:05am --  errorNumber : 2 
+ errorString : Undefined array key "CID"
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 127
+2022-12-07 11:36:14am --  errorNumber : 2 
+ errorString : Undefined array key "firstname"
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 127
+2022-12-07 11:42:37am --  errorNumber : 2 
+ errorString : Undefined array key "firstname"
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 127
+2022-12-07 11:42:43am --  errorNumber : 2 
+ errorString : Undefined array key "firstname"
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 127
+2022-12-07 11:45:48am --  Exeption: 127 of the file C:\xampp\htdocs\202210969\common\PHPFunctions.php : 0)
+
+2022-12-07 11:50:54am --  Exeption: 127 of the file C:\xampp\htdocs\202210969\common\PHPFunctions.php : 0)
+
+2022-12-07 12:01:46pm --  Exeption: 244 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-07 12:04:41pm --  Exeption: 244 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-07 12:06:54pm --  Exeption: 244 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-07 12:07:07pm --  Exeption: 244 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-07 12:07:12pm --  Exeption: 244 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-07 12:07:16pm --  Exeption: 244 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-07 12:07:59pm --  Exeption: 244 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-07 12:11:23pm --  Exeption: 245 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-07 12:18:46pm --  Exeption: 245 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-07 12:21:18pm --  Exeption: 245 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-07 12:21:59pm --  Exeption: 245 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-07 12:23:29pm --  Exeption: 245 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-07 12:28:01pm --  Exeption: 238 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-07 12:30:54pm --  Exeption: 239 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-07 12:32:05pm --  Exeption: 239 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-07 12:32:46pm --  Exeption: 239 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-07 12:33:57pm --  Exeption: 240 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-07 12:49:17pm --  Exeption: 239 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-07 12:53:20pm --  Exeption: 237 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-07 01:01:55pm --  errorNumber : 2 
+ errorString : Undefined variable $loggedcustomer
+ errorFile : C:\xampp\htdocs\202210969\buying.php
+ errorLineNumber : 56
+2022-12-07 01:03:50pm --  Exeption: 57 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-07 01:10:03pm --  Exeption: 238 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-07 01:15:02pm --  errorNumber : 2 
+ errorString : Undefined variable $globalCID
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 163
+2022-12-07 01:15:02pm --  Exeption: 179 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-07 01:18:47pm --  errorNumber : 2 
+ errorString : Undefined variable $globalCID
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 163
+2022-12-07 01:18:47pm --  Exeption: 181 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-07 01:19:37pm --  Exeption: 180 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-07 01:19:43pm --  Exeption: 180 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-07 01:20:04pm --  errorNumber : 2 
+ errorString : Undefined variable $globalCID
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 163
+2022-12-07 01:20:04pm --  Exeption: 180 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-07 01:21:11pm --  Exeption: 180 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-07 01:21:16pm --  Exeption: 180 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-07 01:21:17pm --  Exeption: 180 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-07 01:21:17pm --  Exeption: 180 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-07 01:21:17pm --  Exeption: 180 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-07 01:21:17pm --  Exeption: 180 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-07 01:21:20pm --  Exeption: 180 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-07 01:21:32pm --  errorNumber : 2 
+ errorString : Undefined variable $globalCID
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 163
+2022-12-07 01:21:32pm --  Exeption: 180 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-07 01:22:39pm --  errorNumber : 2 
+ errorString : Undefined variable $globalCID
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 163
+2022-12-07 01:22:39pm --  Exeption: 175 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-07 01:23:28pm --  Exeption: 175 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-07 01:23:31pm --  Exeption: 175 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-07 01:23:34pm --  Exeption: 175 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-07 01:23:58pm --  Exeption: 238 of the file C:\xampp\htdocs\202210969\objects\customer.php : 42000)
+
+2022-12-07 01:23:58pm --  Exeption: 175 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-08 02:39:11pm --  Exeption: 238 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-08 02:39:11pm --  Exeption: 175 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-08 02:39:51pm --  Exeption: 176 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-08 02:42:46pm --  errorNumber : 2 
+ errorString : Undefined array key "loggedUserObject"
+ errorFile : C:\xampp\htdocs\202210969\buying.php
+ errorLineNumber : 176
+2022-12-08 02:44:30pm --  errorNumber : 2 
+ errorString : Undefined array key "loggedUserObject"
+ errorFile : C:\xampp\htdocs\202210969\buying.php
+ errorLineNumber : 176
+2022-12-08 02:57:52pm --  errorNumber : 2 
+ errorString : Undefined array key "loggedUser"
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 159
+2022-12-08 02:57:53pm --  errorNumber : 2 
+ errorString : Undefined array key "loggedUser"
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 159
+2022-12-08 02:57:57pm --  errorNumber : 2 
+ errorString : Undefined array key "loggedUser"
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 159
+2022-12-08 02:57:58pm --  errorNumber : 2 
+ errorString : Undefined array key "loggedUser"
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 159
+2022-12-08 02:58:06pm --  errorNumber : 2 
+ errorString : Undefined array key "loggedUser"
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 159
+2022-12-08 03:05:03pm --  errorNumber : 2 
+ errorString : Undefined array key "loggedUser"
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 159
+2022-12-08 03:07:59pm --  errorNumber : 2 
+ errorString : Undefined array key "loggedUser"
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 159
+2022-12-08 03:09:25pm --  errorNumber : 2 
+ errorString : Undefined array key "loggedUser"
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 159
+2022-12-08 03:09:30pm --  errorNumber : 2 
+ errorString : Undefined array key "loggedUser"
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 159
+2022-12-08 03:11:29pm --  Exeption: 238 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-08 03:11:35pm --  Exeption: 238 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-08 03:12:53pm --  Exeption: 238 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-08 03:15:19pm --  Exeption: 238 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-08 03:17:20pm --  Exeption: 238 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-08 03:17:29pm --  Exeption: 238 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-08 03:21:07pm --  Exeption: 238 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-08 03:21:33pm --  Exeption: 238 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-08 03:24:52pm --  Exeption: 238 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-08 03:25:02pm --  Exeption: 238 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-08 03:28:37pm --  Exeption: 238 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-08 03:28:52pm --  Exeption: 238 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-08 03:33:43pm --  Exeption: 238 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-08 03:35:23pm --  Exeption: 238 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-08 03:35:30pm --  Exeption: 238 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-08 03:39:09pm --  Exeption: 238 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-08 03:39:19pm --  Exeption: 238 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-08 03:39:55pm --  Exeption: 238 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-08 03:40:50pm --  Exeption: 238 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-08 03:42:00pm --  Exeption: 238 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-08 03:42:42pm --  Exeption: 238 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-08 07:12:09pm --  Exeption: 238 of the file C:\xampp\htdocs\202210969\objects\customer.php : HY000)
+
+2022-12-08 07:47:14pm --  errorNumber : 2 
+ errorString : Undefined array key "loggedUser"
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 138
+2022-12-08 07:47:51pm --  errorNumber : 2 
+ errorString : Undefined array key "loggedUser"
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 138
+2022-12-08 07:52:20pm --  errorNumber : 2 
+ errorString : Undefined array key "loggedUser"
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 138
+2022-12-08 08:00:05pm --  errorNumber : 2 
+ errorString : Undefined array key "loggedUser"
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 134
+2022-12-08 08:00:11pm --  errorNumber : 2 
+ errorString : Undefined array key "loggedUser"
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 134
+2022-12-08 08:02:24pm --  errorNumber : 2 
+ errorString : Undefined array key "loggedUser"
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 134
+2022-12-08 08:10:46pm --  errorNumber : 2 
+ errorString : Undefined array key "loggedUser"
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 133
+2022-12-08 08:10:54pm --  errorNumber : 2 
+ errorString : Undefined array key "loggedUser"
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 133
+2022-12-08 08:11:39pm --  errorNumber : 2 
+ errorString : Undefined array key "loggedUser"
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 133
+2022-12-08 08:13:55pm --  errorNumber : 2 
+ errorString : Undefined array key "loggedUser"
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 133
+2022-12-08 08:17:07pm --  errorNumber : 2 
+ errorString : Undefined array key "loggedUser"
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 133
+2022-12-08 08:27:54pm --  errorNumber : 2 
+ errorString : Undefined array key "loggedUser"
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 148
+2022-12-08 08:32:30pm --  errorNumber : 2 
+ errorString : Undefined variable $loggedID
+ errorFile : C:\xampp\htdocs\202210969\buying.php
+ errorLineNumber : 55
+2022-12-08 08:46:45pm --  errorNumber : 2 
+ errorString : Undefined array key "loggedUser"
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 134
+2022-12-08 08:47:04pm --  errorNumber : 2 
+ errorString : Undefined array key "loggedUser"
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 134
+2022-12-08 08:47:09pm --  errorNumber : 2 
+ errorString : Undefined array key "loggedUser"
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 134
+2022-12-08 08:48:39pm --  errorNumber : 2 
+ errorString : Undefined array key "loggedUser"
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 134
+2022-12-08 08:51:30pm --  errorNumber : 2 
+ errorString : Undefined array key "loggedUser"
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 134
+2022-12-09 03:49:39pm --  errorNumber : 2 
+ errorString : Undefined array key "loggedUser"
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 134
+2022-12-09 04:26:28pm --  Exeption: 238 of the file C:\xampp\htdocs\202210969\objects\customer.php : 42000)
+
+2022-12-09 04:29:38pm --  errorNumber : 2 
+ errorString : Undefined array key "cid"
+ errorFile : C:\xampp\htdocs\202210969\objects\customer.php
+ errorLineNumber : 247
+2022-12-09 04:29:43pm --  errorNumber : 2 
+ errorString : Undefined array key "cid"
+ errorFile : C:\xampp\htdocs\202210969\objects\customer.php
+ errorLineNumber : 247
+2022-12-09 04:32:12pm --  errorNumber : 2 
+ errorString : Undefined array key "cid"
+ errorFile : C:\xampp\htdocs\202210969\objects\customer.php
+ errorLineNumber : 247
+2022-12-09 04:32:15pm --  errorNumber : 2 
+ errorString : Undefined array key "cid"
+ errorFile : C:\xampp\htdocs\202210969\objects\customer.php
+ errorLineNumber : 247
+2022-12-09 04:35:01pm --  errorNumber : 2 
+ errorString : Undefined variable $loggedUserObject
+ errorFile : C:\xampp\htdocs\202210969\buying.php
+ errorLineNumber : 170
+2022-12-09 04:35:04pm --  errorNumber : 2 
+ errorString : Undefined variable $loggedUserObject
+ errorFile : C:\xampp\htdocs\202210969\buying.php
+ errorLineNumber : 170

@@ -1,36 +1,31 @@
 <?php
 
-
- 
-require_once OBJECT_CONNECTION;
-
-
  class customer {
-
-
-    
     //define dont work in object
     
     const NAME_MAX_LENGHT =20;
-    const USERNAME_MAX_LENGHT =7;
-
+    const USERNAME_MAX_LENGHT =15;
+    const ADDRESSCITY_MAX_LENGHT=25;
+    const POSTALCODE_MAX_LENGHT =7;
 //variables
     private $firstname = "";
     private $cid = "";
     private $lastname ="";
-    private $adress ="";
+    private $address ="";
     private $city ="";
     private $postalcode ="";
     private $picture ="";
+    private $username ="";
+    private $password ="";
     
-    public function __construct($newCustomerId ="", $newFName = "", $newLName = "",$newAdress = "", $newCity = "", $newPostalCode = "", $newPicture = "" )
+    public function __construct($newCustomerId ="", $newFName = "", $newLName = "",$newAddress = "", $newCity = "", $newPostalCode = "", $newPicture = "" )
     {
         $this->setFirstName($newFName);
         $this->setLastName($newLName);
-        $this->setLastName($newAdress);
-        $this->setLastName($newCity);
-        $this->setLastName($newPostalCode);
-        $this->setLastName($newPicture);
+        $this->setAddress($newAddress);
+        $this->setCity($newCity);
+        $this->setPostalCode($newPostalCode);
+        $this->setPicture($newPicture);
         
     }
     
@@ -43,13 +38,13 @@ require_once OBJECT_CONNECTION;
                 
                 $this->cid = $newCustomerId;
             }
-         
     }
     
     public function getFirstName()
     {
         return $this->firstname;
     }
+    
     public function setFirstName($newFName)
     {
         if($newFName == "")
@@ -74,19 +69,20 @@ require_once OBJECT_CONNECTION;
     
     public function getLastName()
     {
-        return $this->lasttname;
+        return $this->lastname;
     }
+    
     public function setLastName($newLName)
     {
         if($newLName == "")
         {
-            return "lastname canot be empty";
+            return "last name canot be empty";
         }
         else
         {
             if(mb_strlen($newLName) > self::NAME_MAX_LENGHT)
             {
-                return "lastname canot be longer than " . self::NAME_MAX_LENGHT . " characters";
+                return "last name canot be longer than " . self::NAME_MAX_LENGHT . " characters";
             }
             else
             {
@@ -97,10 +93,102 @@ require_once OBJECT_CONNECTION;
         }
     }    
     
+    public function getAddress()
+    {
+        return $this->address;
+    }
+    
+    public function setAddress($newAddress)
+    {
+        if($newAddress == "")
+        {
+            return "address canot be empty";
+        }
+        else
+        {
+            if(mb_strlen($newAddress) > self::ADDRESSCITY_MAX_LENGHT)
+            {
+                return "address canot be longer than " . self::ADDRESSCITY_MAX_LENGHT . " characters";
+            }
+            else
+            {
+                $this->address = $newAddress;
+                return true;
+            }
+            
+        }
+    } 
+
+    public function getCity()
+    {
+        return $this->address;
+    }
+    
+    public function setCity($newCity)
+    {
+        if($newCity == "")
+        {
+            return "city canot be empty";
+        }
+        else
+        {
+            if(mb_strlen($newCity) > self::ADDRESSCITY_MAX_LENGHT)
+            {
+                return "city canot be longer than " . self::ADDRESSCITY_MAX_LENGHT . " characters";
+            }
+            else
+            {
+                $this->address = $newCity;
+                return true;
+            }
+            
+        }
+    } 
+    
+    
+     public function getPostalcode()
+    {
+        return $this->postalcode;
+    }
+    
+    public function setPostalcode($newPostalCode)
+    {
+        if($newPostalCode == "")
+        {
+            return "Postal Code canot be empty";
+        }
+        else
+        {
+            if(mb_strlen($newPostalCode) > self::POSTALCODE_MAX_LENGHT)
+            {
+                return "Postal Code canot be longer than " . self::POSTALCODE_MAX_LENGHT . " characters";
+            }
+            else
+            {
+                $this->postalcode = $newPostalCode;
+                return true;
+            }
+            
+        }
+    } 
+    
+    public function getPicture()
+    {
+        return $this->picture;
+    }
+    
+    public function setPicture($newPicture)
+    {
+        
+        $this->picture = $newPicture;
+
+    } 
+
     public function getUsername()
     {
         return $this->username;
     }
+    
     public function setUsername($newName)
     {
         if($newName == "")
@@ -121,34 +209,51 @@ require_once OBJECT_CONNECTION;
             
         }
     } 
-
     
+    public function setPassword($newPassword)
+    {
+        if($newPassword == "")
+        {
+            return "password error";
+        }
+        else
+        {
+            $this->password = $newPassword;
+            return true;
+        }
+    }
     
     //Methhods
     
     function load($cid)
     {
+        
         global $connection;
-        ##use procedeures
-        $SQLquery =     "call 'select_all_customers()';";
-
+        
+        ##use procedures
+        $SQLquery = "CALL select_one_customer(:cid)";
+        
         echo $SQLquery. "<br><br>" ;
         
         $rows = $connection->prepare($SQLquery);
-        $rows->bindParam(":cid", $cid);                                      //opional param
+        
+        $rows->bindParam(":cid",$cid, PDO::PARAM_STR);                         //opional param
             
-             
-             
-             if($rows->execute())
-            {
-                while($row = $rows->fetch())
-                    {
-                       
-                        $this-> cid = $row["cid"];
-                        $this-> firstname = $row["firstname"];
-                        return true;
-                    }
-            }
+            if($rows->execute())
+           {
+               while($row = $rows->fetch())
+                   {
+
+                       $this->cid = $row["CID"];
+                       $this->firstname = $row["firstname"];
+                       $this->lastname = $row["lastname"];
+                       $this->address = $row["address"];
+                       $this->city = $row["city"];
+                       $this->postalcode = $row["postalcode"];
+                       $this->picture = $row["picture"];
+                       return true;
+                   }
+           }
 
     }
     
@@ -186,7 +291,14 @@ require_once OBJECT_CONNECTION;
 
             $rows = $connection->prepare($SQLquery);
             $rows->bindParam(":cid", $this->cid);        
-            $rows->bindParam(":firstname", $this->firstname);       //opional param
+            $rows->bindParam(":firstname", $this->firstname);                                  //opional param
+            $rows->bindParam(":lastname", $this->lastname);
+            $rows->bindParam(":address", $this->address);      
+            $rows->bindParam(":city", $this->city);      
+            $rows->bindParam(":postalcode", $this->postalcode);
+            $rows->bindParam(":username", $this->username);
+            $rows->bindParam(":password", $this->password);
+            $rows->bindParam(":picture", $this->picture);    //opional param
 
                  if($rows->execute())
                 {
@@ -208,7 +320,7 @@ require_once OBJECT_CONNECTION;
             echo $SQLquery. "<br><br>" ;
 
             $rows = $connection->prepare($SQLquery);
-            $rows->bindParam(":cid", $this->cid);        
+            $rows->bindParam(":CID", $this->$cid);        
             //opional param
 
                  if($rows->execute())

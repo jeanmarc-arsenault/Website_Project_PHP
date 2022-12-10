@@ -1,13 +1,13 @@
 <?php
 
 
-class customers extends collection
+class orders extends collection
 {
    
     function __construct()
     {
         global $connection;
-        $SQLquery = "CALL select_all_customers()";
+        $SQLquery = "CALL select_all_orderss()";
         
         $rows = $connection->prepare($SQLquery);
         
@@ -15,9 +15,9 @@ class customers extends collection
                 
                 while($row = $rows->fetch())
                 {
-                    $customer = new customer($row["CID"], $row["firstname"], $row["lastname"], $row["adress"], $row["city"], $row["postalcode"], $row["picture"]);
+                    $order = new order($row["OID"], $row["PID"],$row["CID"],$row["qty"],$row["com"],$row["soldprice"],$row["orderdate"]);
                     
-                    $this->add($row["CID"],$customer);
+                    $this->add($row["OID"],$order);
                 }
           }
         
