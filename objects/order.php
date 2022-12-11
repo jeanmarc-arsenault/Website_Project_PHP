@@ -147,7 +147,7 @@
         ##use procedures
         $SQLquery = "CALL select_one_order(:oid)";
         
-        echo $SQLquery. "<br><br>" ;
+        //echo $SQLquery. "<br><br>" ;
         
         $rows = $connection->prepare($SQLquery);
         
@@ -177,7 +177,7 @@
         if($this->oid==""){//insert
             $SQLquery = "call insert_new_order(:pid, :cid,:qty,:com,:soldprice);";
 
-            echo $SQLquery. "<br><br>" ;
+            //echo $SQLquery. "<br><br>" ;
 
             $rows = $connection->prepare($SQLquery);
             
@@ -226,7 +226,7 @@
 
          
          
-            echo $SQLquery. "<br><br>" ;
+            //echo $SQLquery. "<br><br>" ;
 
             $rows = $connection->prepare($SQLquery);
             $rows->bindParam(":OID", $this->$oid);        

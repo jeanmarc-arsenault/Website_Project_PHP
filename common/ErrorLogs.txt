@@ -486,3 +486,111 @@
  errorString : Undefined variable $loggedUserObject
  errorFile : C:\xampp\htdocs\202210969\buying.php
  errorLineNumber : 170
+2022-12-10 02:23:04pm --  errorNumber : 2 
+ errorString : Undefined variable $loggedcustomer
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 191
+2022-12-10 02:23:11pm --  errorNumber : 2 
+ errorString : Undefined variable $loggedcustomer
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 191
+2022-12-10 02:23:13pm --  errorNumber : 2 
+ errorString : Undefined variable $loggedcustomer
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 191
+2022-12-10 02:23:13pm --  errorNumber : 2 
+ errorString : Undefined variable $loggedcustomer
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 191
+2022-12-10 02:23:14pm --  errorNumber : 2 
+ errorString : Undefined variable $loggedcustomer
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 191
+2022-12-10 02:29:23pm --  errorNumber : 2 
+ errorString : Undefined variable $accounttype
+ errorFile : C:\xampp\htdocs\202210969\account.php
+ errorLineNumber : 120
+2022-12-10 02:43:33pm --  errorNumber : 2 
+ errorString : Undefined variable $loggedcustomer
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 193
+2022-12-10 02:44:41pm --  errorNumber : 2 
+ errorString : Undefined variable $loggedcustomer
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 193
+2022-12-10 02:44:50pm --  errorNumber : 2 
+ errorString : Undefined variable $loggedcustomer
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 193
+2022-12-10 02:45:43pm --  errorNumber : 2 
+ errorString : Undefined variable $loggedcustomer
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 193
+2022-12-10 06:02:20pm --  errorNumber : 2 
+ errorString : Undefined variable $loggedUser
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 233
+2022-12-10 06:06:55pm --  Exeption: 55 of the file C:\xampp\htdocs\202210969\orders_page.php : 0)
+
+2022-12-10 06:09:53pm --  Exeption: 54 of the file C:\xampp\htdocs\202210969\orders_page.php : 0)
+
+2022-12-10 06:18:51pm --  Exeption: 54 of the file C:\xampp\htdocs\202210969\orders_page.php : 0)
+
+2022-12-10 07:43:48pm --  Exeption: 54 of the file C:\xampp\htdocs\202210969\orders_page.php : 0)
+
+2022-12-10 07:44:05pm --  Exeption: 54 of the file C:\xampp\htdocs\202210969\orders_page.php : 0)
+
+2022-12-10 07:44:10pm --  Exeption: 54 of the file C:\xampp\htdocs\202210969\orders_page.php : 0)
+
+2022-12-10 07:57:30pm --  Exeption: 54 of the file C:\xampp\htdocs\202210969\orders_page.php : 0)
+
+2022-12-10 08:08:08pm --  errorNumber : 2 
+ errorString : Undefined variable $body
+ errorFile : C:\xampp\htdocs\202210969\account.php
+ errorLineNumber : 128
+2022-12-10 08:21:21pm --  Exeption: 54 of the file C:\xampp\htdocs\202210969\orders_page.php : 0)
+
+2022-12-10 08:21:23pm --  errorNumber : 2 
+ errorString : Undefined variable $body
+ errorFile : C:\xampp\htdocs\202210969\account.php
+ errorLineNumber : 128
+2022-12-10 08:21:31pm --  errorNumber : 2 
+ errorString : Undefined variable $body
+ errorFile : C:\xampp\htdocs\202210969\account.php
+ errorLineNumber : 128
+2022-12-10 09:03:36pm --  errorNumber : 2 
+ errorString : Undefined variable $_FILE
+ errorFile : C:\xampp\htdocs\202210969\objects\customer.php
+ errorLineNumber : 184
+2022-12-10 09:04:07pm --  errorNumber : 2 
+ errorString : Undefined variable $_FILE
+ errorFile : C:\xampp\htdocs\202210969\objects\customer.php
+ errorLineNumber : 184
+2022-12-10 09:07:56pm --  errorNumber : 2 
+ errorString : Undefined array key "picture"
+ errorFile : C:\xampp\htdocs\202210969\objects\customer.php
+ errorLineNumber : 184
+2022-12-10 09:22:54pm --  errorNumber : 2 
+ errorString : Undefined array key "address"
+ errorFile : C:\xampp\htdocs\202210969\account.php
+ errorLineNumber : 22
+2022-12-10 09:24:19pm --  errorNumber : 2 
+ errorString : Undefined array key "picture"
+ errorFile : C:\xampp\htdocs\202210969\account.php
+ errorLineNumber : 27
+2022-12-10 09:25:38pm --  errorNumber : 2 
+ errorString : Undefined array key "picture"
+ errorFile : C:\xampp\htdocs\202210969\account.php
+ errorLineNumber : 27
+2022-12-10 09:28:50pm --  Exeption: 271 of the file C:\xampp\htdocs\202210969\objects\customer.php : 42000)
+
+2022-12-10 09:32:04pm --  Exeption: 271 of the file C:\xampp\htdocs\202210969\objects\customer.php : 42000)
+
+2022-12-10 09:37:04pm --  Exeption: 271 of the file C:\xampp\htdocs\202210969\objects\customer.php : 42000)
+
+2022-12-10 09:39:29pm --  Exeption: 271 of the file C:\xampp\htdocs\202210969\objects\customer.php : 42000)
+
+2022-12-10 09:53:56pm --  Exeption: 282 of the file C:\xampp\htdocs\202210969\objects\customer.php : 23000)
+
+2022-12-10 09:56:33pm --  Exeption: 282 of the file C:\xampp\htdocs\202210969\objects\customer.php : 23000)
+

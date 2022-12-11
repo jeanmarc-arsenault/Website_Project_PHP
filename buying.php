@@ -32,7 +32,7 @@ $validationErrorPrice = "";
 $validationErrorQty = "";
 $errorOccured = false;
 $orderConfirmation = "";
-
+global $loggedcustomer;
 //////////////////////////////////////////
 define("FOLDER_PHPFUNCTIONS", "common/");
 define("FILE_PHPFUNCTIONS", FOLDER_PHPFUNCTIONS."PHPFunctions.php");
@@ -45,28 +45,7 @@ require_once FILE_PHPFUNCTIONS;
 
     pageTop("Buying",'class="spaceback"',"logoshow");
 
-if(isset($_POST["user"])) {
-        $username=$_POST["user"];
-        $pass=$_POST["password"];  
-        if(login($username, $pass)){
-            
-            exit();
-        }
-        else{
-            echo "Invalid login";
-            $loggedUser = null;
-            $loggedcustomer = null;
-        }         
-}
-else {
-        if(isset($_POST["logout"])){
-            deleteCookie();
-        }
-        else
-        {
-            readCookie();
-        }
-}
+
 
 #validation
 if(isset($_POST["buy"]))  #strlen > 20
@@ -164,18 +143,7 @@ if(isset($_POST["buy"]))  #strlen > 20
 <!--
 login
 -->
-<?php
-if($loggedUser != ""){
 
-    echo "Welcome " . $loggedcustomer->getFirstName() . " " . $loggedcustomer->getLastName();
-
-?>
-        <form action="buying.php" method="POST">
-<?php   
-        
-?>
-            <input type="submit" name="logout" value="Logout">
-        </form>
 
 <div class="description">
     <h1>Emporium Used Spaceship Acquisition Form:</h1>
@@ -284,19 +252,6 @@ echo $qty;
 
 
 
-<?php
-}
-    else{
-?>
 
-        <form action="buying.php" method="POST">
-            Username:
-            <input type="text" name="user">
-            Password:
-            <input type="text" name="password">
-            <input type="submit" name="login" value="Login">
-        </form>
 <?php
-    }
-
                 pageBottom();

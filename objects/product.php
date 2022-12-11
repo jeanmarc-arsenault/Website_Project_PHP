@@ -171,7 +171,7 @@
         ##use procedures
         $SQLquery = "CALL select_one_product(:PID)";
         
-        echo $SQLquery. "<br><br>" ;
+        //echo $SQLquery. "<br><br>" ;
         
         $rows = $connection->prepare($SQLquery);
         
@@ -201,7 +201,7 @@
         if($this->oid==""){//insert
             $SQLquery = "call insert_new_product(:prcode, :price,:costprice,:info);";
 
-            echo $SQLquery. "<br><br>" ;
+            //echo $SQLquery. "<br><br>" ;
 
             $rows = $connection->prepare($SQLquery);
             $rows->bindParam(":prcode", $this->prcode);
@@ -220,7 +220,7 @@
 
          
          
-            echo $SQLquery. "<br><br>" ;
+            //echo $SQLquery. "<br><br>" ;
 
             $rows = $connection->prepare($SQLquery);
             $rows->bindParam(":PID", $this->pid);
@@ -242,9 +242,7 @@
         ##use procedeures
      $SQLquery = 'call "delete_product(:PID);"';
 
-         
-         
-            echo $SQLquery. "<br><br>" ;
+            //echo $SQLquery. "<br><br>" ;
 
             $rows = $connection->prepare($SQLquery);
             $rows->bindParam(":PID", $this->$pid);        

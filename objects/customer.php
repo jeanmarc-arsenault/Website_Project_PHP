@@ -18,13 +18,15 @@
     private $username ="";
     private $password ="";
     
-    public function __construct($newCustomerId ="", $newFName = "", $newLName = "",$newAddress = "", $newCity = "", $newPostalCode = "", $newPicture = "" )
+    public function __construct($newCustomerId ="", $newFName = "", $newLName = "", $newCity = "", $newAddress = "", $newPostalCode = "",$newUsername = "", $newPassword = "", $newPicture = "" )
     {
         $this->setFirstName($newFName);
         $this->setLastName($newLName);
-        $this->setAddress($newAddress);
         $this->setCity($newCity);
+        $this->setAddress($newAddress);
         $this->setPostalCode($newPostalCode);
+        $this->setUsername($newUsername);
+        $this->setPassword($newPassword);
         $this->setPicture($newPicture);
         
     }
@@ -121,7 +123,7 @@
 
     public function getCity()
     {
-        return $this->address;
+        return $this->city;
     }
     
     public function setCity($newCity)
@@ -138,7 +140,7 @@
             }
             else
             {
-                $this->address = $newCity;
+                $this->city = $newCity;
                 return true;
             }
             
@@ -178,8 +180,8 @@
     }
     
     public function setPicture($newPicture)
-    {
-        
+    {   
+
         $this->picture = $newPicture;
 
     } 
@@ -189,21 +191,21 @@
         return $this->username;
     }
     
-    public function setUsername($newName)
+    public function setUsername($newUsername)
     {
-        if($newName == "")
+        if($newUsername == "")
         {
             return "username canot be empty";
         }
         else
         {
-            if(mb_strlen($newName) > self::USERNAME_MAX_LENGHT)
+            if(mb_strlen($newUsername) > self::USERNAME_MAX_LENGHT)
             {
                 return "username canot be longer than " . self::USERNAME_MAX_LENGHT . " characters";
             }
             else
             {
-                $this->username = $newName;
+                $this->username = $newUsername;
                 return true;
             }
             
@@ -214,16 +216,17 @@
     {
         if($newPassword == "")
         {
-            return "password error";
+            return "Password error";
         }
         else
         {
-            $this->password = $newPassword;
+            $encodedPassword = encode_password($newPassword, PASSWORD_DEFAULT);
+            $this->password = $encodedPassword;
             return true;
         }
     }
     
-    //Methhods
+    //Methods
     
     function load($cid)
     {
@@ -233,7 +236,7 @@
         ##use procedures
         $SQLquery = "CALL select_one_customer(:cid)";
         
-        echo $SQLquery. "<br><br>" ;
+        //echo $SQLquery. "<br><br>" ;
         
         $rows = $connection->prepare($SQLquery);
         
@@ -262,15 +265,15 @@
         global $connection;
         
         if($this->cid==""){//insert
-            $SQLquery = "call 'insert_new_customer(:firstname,:lastname,:address,:city,:postalcode,:username,:password,:picture)';";
+            $SQLquery = "call insert_new_customer(:firstname,:lastname,:address,:city,:postalcode,:username,:password,:picture);";
 
-            echo $SQLquery. "<br><br>" ;
+            //echo $SQLquery. "<br><br>" ;
 
             $rows = $connection->prepare($SQLquery);
             $rows->bindParam(":firstname", $this->firstname);                                  //opional param
             $rows->bindParam(":lastname", $this->lastname);
+            $rows->bindParam(":city", $this->city);    
             $rows->bindParam(":address", $this->address);      
-            $rows->bindParam(":city", $this->city);      
             $rows->bindParam(":postalcode", $this->postalcode);
             $rows->bindParam(":username", $this->username);
             $rows->bindParam(":password", $this->password);
@@ -283,11 +286,11 @@
         }
         else{//update
          ##use procedeures
-         $SQLquery = "call 'update_customer(:cid,:firstname,:lastname,:address,:city,:postalcode,:username,:password,:picture)';";
+         $SQLquery = "call update_customer(:cid,:firstname,:lastname,:address,:city,:postalcode,:username,:password,:picture);";
 
          
          
-            echo $SQLquery. "<br><br>" ;
+            //echo $SQLquery. "<br><br>" ;
 
             $rows = $connection->prepare($SQLquery);
             $rows->bindParam(":cid", $this->cid);        
@@ -313,11 +316,11 @@
     {
         global $connection;
         ##use procedeures
-     $SQLquery = 'call "delete_customer(:CID);"';
+     $SQLquery = 'call delete_customer(:CID);';
 
          
          
-            echo $SQLquery. "<br><br>" ;
+            //echo $SQLquery. "<br><br>" ;
 
             $rows = $connection->prepare($SQLquery);
             $rows->bindParam(":CID", $this->$cid);        

@@ -15,7 +15,7 @@ class customers extends collection
                 
                 while($row = $rows->fetch())
                 {
-                    $customer = new customer($row["CID"], $row["firstname"], $row["lastname"], $row["adress"], $row["city"], $row["postalcode"], $row["picture"]);
+                    $customer = new customer($row["CID"], $row["firstname"], $row["lastname"], $row["city"], $row["address"], $row["postalcode"], $row["username"], $row["password"], $row["picture"]);
                     
                     $this->add($row["CID"],$customer);
                 }

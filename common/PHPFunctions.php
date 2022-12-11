@@ -9,7 +9,7 @@ Jean-Marc Arsenault (2210969) 2022-12-03 worked on login .
 <?php
 define("FOLDER_ORDERS", "data/");
 define("HOME_PAGE", "index.php");
-define("ORDERS_PAGE", "orders.php");
+define("ORDERS_PAGE", "orders_page.php");
 define("BUYING_PAGE", "buying.php");
 const OBJECTS_FOLDER = "objects/";
 const OBJECT_COLLECTION = OBJECTS_FOLDER . "collection.php";
@@ -112,6 +112,7 @@ session_start();#use session variable
 $cid= "";
 $password= "";
 
+
 function login($username, $pass,)
 { 
     global $connection;
@@ -158,7 +159,8 @@ function deleteCookie()
     global $loggedcustomer;
     $_SESSION["loggedUser"] = null;
     $loggedcustomer = null;
-    header('location: ' . $_SERVER['SCRIPT_NAME']);
+    $page = $_SERVER['SCRIPT_NAME'];
+    header('location: ' . $page);
     session_destroy();
     exit();
 }
@@ -171,7 +173,8 @@ define("FOLDER_MEDIA", "media/");
 define("IMAGE_LOGO", FOLDER_MEDIA . "trashspaceship.jpg");
 define("IMAGE_SPACE_BACKGROUND", FOLDER_MEDIA . "space.jpg");
 
-function pageTop($Title, $body, $logo){?>
+function pageTop($Title, $body, $logo){
+?>
 <!DOCTYPE html>
     <html>
         <head>
@@ -186,23 +189,85 @@ function pageTop($Title, $body, $logo){?>
                         <ul>
                             <li><a href="index.php">Homepage</a></li>
                             <li><a href="buying.php">Buying</a></li>
-                            <li><a href="orders.php">Orders</a></li>
+                            <li><a href="orders_page.php">Orders</a></li>
 <?php
-    if($Title == "Buying" || $Title == "Orders"){
-       echo '<li><a href="account.php">Account</a></li>';
+if(isset($_POST["user"])) {
+        $username=$_POST["user"];
+        $pass=$_POST["password"];  
+        if(login($username, $pass)){
+            
+            exit();
+        }
+        else{
+            echo "Invalid login";
+            $loggedUser = null;
+            $loggedcustomer = null;
+        }         
+}
+else {
+        if(isset($_POST["logout"])){
+            deleteCookie();
+        }
+        else
+        {
+            readCookie();
+        }
+}
+
+
+
+global $loggedcustomer;
+    if($loggedcustomer == null){
+       echo '<li><a href="account.php">Register</a></li>';
+    }
+    else{
+        echo '<li><a href="account.php">Account</a></li>';
     }
 ?>
                         </ul>
                     </nav>
                  </header>
+<?php
+global $loggedUser;
+    if($loggedUser != ""){
+
+        echo "Welcome " . $loggedcustomer->getFirstName() . " " . $loggedcustomer->getLastName();
+        $page = $_SERVER['PHP_SELF'];
+    ?>
+                
+            <form action="<?php echo $page; ?>" method="POST">
+    <?php   
+
+    ?>
+                <input type="submit" name="logout" value="Logout">
+           </form>
+
+
+
+    <?php
+    }
+    if($loggedcustomer == null){
+?>
+
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+            Username:
+            <input type="text" name="user">
+            Password:
+            <input type="text" name="password">
+            <input type="submit" name="login" value="Login">
+        </form>
+<?php
+    }
+?>
                 <div>
                     <p class="title">Welcome to the Tatooine Used Spaceships Emporium</p>
                 </div>
 <?php
 }
 
-function pageBottom()
-{
+function pageBottom(){
+    
+
 ?>
                 </div>
                 <footer>Copyright Jean-Marc Arsenault (2210969) 
@@ -212,6 +277,7 @@ function pageBottom()
             </body>
     </html>
 <?php
-}
 
+
+}
 ?>

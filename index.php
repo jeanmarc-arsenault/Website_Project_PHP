@@ -4,6 +4,7 @@ Jean-Marc Arsenault (2210969) 2022-11-25 Modified NetBeans project, and added lo
 Jean-Marc Arsenault (2210969) 2022-11-29 added few new class files and organizing file dependencies.
 Jean-Marc Arsenault (2210969) 2022-12-03 worked on login .
 Jean-Marc Arsenault (2210969) 2022-12-10 added missing objects.
+Jean-Marc Arsenault (2210969) 2022-12-10 worked on register and update account info.
 -->
 <?php
 define("FOLDER_PHPFUNCTIONS", "common/");
@@ -16,7 +17,7 @@ define("FILE_SS2", FOLDER_PICTURES . "spaceship2.jpg");
 define("FILE_SS3", FOLDER_PICTURES . "spaceship3.jpg");
 define("FILE_SS4", FOLDER_PICTURES . "spaceship4.jpg");
 define("FILE_SS5", FOLDER_PICTURES . "spaceship5.jpg");
-
+global $loggedcustomer;
 //secure https and cookie
 securepage();
 
@@ -27,7 +28,7 @@ shuffle($pictures);
 
 pageTop("Home Page",'class="spaceback"',"logoshow");
     
-    
+
 ?>
 
 <div class="description">
@@ -86,4 +87,4 @@ pageTop("Home Page",'class="spaceback"',"logoshow");
 
 <?php
                 pageBottom();
-?>
+

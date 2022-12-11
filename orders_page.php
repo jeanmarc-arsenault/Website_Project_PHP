@@ -19,7 +19,7 @@ $ordernum=0;
 $print='class="spaceback"';
 $printlogo="logoshow";
 $color="";
-
+global $loggedcustomer;
 //secure https and cookie
 
 
@@ -38,7 +38,7 @@ require_once FILE_PHPFUNCTIONS;
 
 securepage();
 
-pageTop("Orders",$print, $printlogo);
+pageTop("Orders_page",$print, $printlogo);
     
     
 
@@ -47,14 +47,6 @@ pageTop("Orders",$print, $printlogo);
     
 ?>
 <a href="data/cheatsheet.txt">Cheat sheet Link</a>
-<?php
-
-if($loggedUser != ""){
-?>
-        <form action="orders.php" method="POST">
-            Username: <?php echo "Welcome " . $loggedcustomer->firstname . " " . $loggedcustomer->lastname ?>
-            <input type="submit" name="logout" value="Logout">
-        </form>
 
 <?php
 
@@ -134,21 +126,6 @@ if($loggedUser != ""){
             }
         }
         fclose($orderFile);
-}
-
-    else{
-?>
-
-        <form action="orders.php" method="POST">
-            Username:
-            <input type="text" name="user">
-            Password:
-            <input type="text" name="password">
-            <input type="submit" name="login" value="Login">
-        </form>
-<?php
-    }
-
                 pageBottom();
 
 
