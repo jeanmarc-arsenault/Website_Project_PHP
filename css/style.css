@@ -14,8 +14,6 @@ header{
     text-align: center;
 }
 
-
-
 p{
     margin: 10px 10px 10px 10px;
 }
@@ -47,6 +45,14 @@ td {
     width: auto;
     float: left;
 }
+
+
+.customerportraitshow{
+    height: 60px;
+    width: auto;
+    float: left;
+}
+
 
 .logoshowprint{
     height: 80px;
@@ -141,7 +147,6 @@ td {
 
 /* setting footer at bottom of screen and setting width to 95 to eliminate scrool bars*/
 footer { 
-    position: absolute;
     font-size: 18px;
     color: white;
     width : 70%;

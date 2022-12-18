@@ -7,30 +7,25 @@
 //variables
 
     private $pid ="";
-    private $prcode ="";
+    private $prdcode ="";
     private $price ="";
     private $costprice ="";
     private $info ="";
 
     
-    public function __construct( $newProductId ="", $newPrcode ="",$newPrice ="",$newCostPrice ="", $newInfo ="" )
+    public function __construct( $newPrdcode ="",$newPrice ="",$newCostPrice ="", $newInfo ="",$newProductId ="" )
     {
 
-        $this->setQty($newPrcode);
-        $this->setCom($newPrice);
+        $this->setPrCode($newPrdcode);
+        $this->setPrice($newPrice);
         $this->setSoldPrice($newCostPrice);
-        $this->setSoldPrice($newInfo);
-        
+        $this->setINFO($newInfo);
+        $this->pid = $newProductId;
     }
     
-    public function getProductId($newProductId)
+    public function getProductId()
     {
-            if($newProductId== ""){
-                return "..canot be empty";
-            }
-            else{
-                $this->pid = $newProductId;
-            }
+            return $this->pid;
     }
    
     public function getPrice()
@@ -85,26 +80,26 @@
         }
     }
     
-    public function getPrCode()
+    public function getPrdCode()
     {
-        return $this->prcode;
+        return $this->prdcode;
     }
     
-    public function setPrCode($newPrcode)
+    public function setPrCode($newPrdcode)
     {
-        if($newPrcode == "")
+        if($newPrdcode == "")
         {
             return "prcode canot be empty";
         }
         else
         {
-            if((mb_strlen($newPrcode) > self::PRCODE_MAX_LENGHT) )
+            if((mb_strlen($newPrdcode) > self::PRCODE_MAX_LENGHT) )
             {
                 return "Prcode can go to maximum  " . self::PRCODE_MAX_LENGHT . " characters";
             }
             else
             {
-                $this->prcode = $newPrcode;
+                $this->prdcode = $newPrdcode;
                 return true;
             }
             
@@ -182,7 +177,7 @@
                while($row = $rows->fetch())
                    {
                         $this->pid= $row["PID"];
-                        $this->prcode= $row["prcode"];
+                        $this->prdcode= $row["prdcode"];
                         $this->price= $row["price"];
                         $this->costprice= $row["costprice"];
                         $this->info= $row["info"];

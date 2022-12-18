@@ -33,23 +33,14 @@ global $loggedcustomer;
 define("FOLDER_PHPFUNCTIONS", "common/");
 define("FILE_PHPFUNCTIONS", FOLDER_PHPFUNCTIONS."PHPFunctions.php");
 require_once FILE_PHPFUNCTIONS;
-//object and DB
 
-
-securepage();
 
 pageTop("Orders_page",$print, $printlogo);
-    
-    
 
-
-    
-    
 ?>
 <a href="data/cheatsheet.txt">Cheat sheet Link</a>
 
 <?php
-
 
     $orderFile = fopen(FILE_ORDERS, "r") or die("Unable to open the file\n");
     
@@ -91,6 +82,7 @@ pageTop("Orders_page",$print, $printlogo);
                 <th>Product Code</th>
                 <th>First Name</th>
                 <th>Last Name</th>
+                <th>Address</th>
                 <th>City</th>
                 <th>Price</th>
                 <th>Quantity</th>

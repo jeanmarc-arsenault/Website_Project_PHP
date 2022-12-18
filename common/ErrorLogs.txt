@@ -594,3 +594,219 @@
 
 2022-12-10 09:56:33pm --  Exeption: 282 of the file C:\xampp\htdocs\202210969\objects\customer.php : 23000)
 
+2022-12-11 09:23:41am --  Exeption: 54 of the file C:\xampp\htdocs\202210969\orders_page.php : 0)
+
+2022-12-11 09:58:58am --  Exeption: 282 of the file C:\xampp\htdocs\202210969\objects\customer.php : 23000)
+
+2022-12-11 10:03:05am --  Exeption: 282 of the file C:\xampp\htdocs\202210969\objects\customer.php : 23000)
+
+2022-12-11 10:36:51am --  Exeption: 110 of the file C:\xampp\htdocs\202210969\account.php : 0)
+
+2022-12-11 10:38:20am --  Exeption: 110 of the file C:\xampp\htdocs\202210969\account.php : 0)
+
+2022-12-11 10:38:23am --  Exeption: 110 of the file C:\xampp\htdocs\202210969\account.php : 0)
+
+2022-12-11 10:42:16am --  errorNumber : 2 
+ errorString : Undefined array key "password"
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 126
+2022-12-11 10:43:41am --  Exeption: 47 of the file C:\xampp\htdocs\202210969\account.php : 0)
+
+2022-12-11 10:44:58am --  Exeption: 48 of the file C:\xampp\htdocs\202210969\account.php : 0)
+
+2022-12-11 10:45:30am --  Exeption: 49 of the file C:\xampp\htdocs\202210969\account.php : 0)
+
+2022-12-11 10:46:19am --  Exeption: 49 of the file C:\xampp\htdocs\202210969\account.php : 0)
+
+2022-12-11 10:47:22am --  Exeption: 49 of the file C:\xampp\htdocs\202210969\account.php : 0)
+
+2022-12-11 10:47:37am --  Exeption: 34 of the file C:\xampp\htdocs\202210969\objects\customer.php : 0)
+
+2022-12-11 10:50:34am --  Exeption: 34 of the file C:\xampp\htdocs\202210969\objects\customer.php : 0)
+
+2022-12-11 10:50:41am --  Exeption: 34 of the file C:\xampp\htdocs\202210969\objects\customer.php : 0)
+
+2022-12-11 10:50:54am --  Exeption: 34 of the file C:\xampp\htdocs\202210969\objects\customer.php : 0)
+
+2022-12-11 10:51:29am --  errorNumber : 2 
+ errorString : Undefined variable $newCustomerId
+ errorFile : C:\xampp\htdocs\202210969\objects\customer.php
+ errorLineNumber : 36
+2022-12-11 11:01:27am --  Exeption: 34 of the file C:\xampp\htdocs\202210969\objects\customer.php : 0)
+
+2022-12-11 11:04:27am --  Exeption: 49 of the file C:\xampp\htdocs\202210969\account.php : 0)
+
+2022-12-11 11:05:29am --  Exeption: 49 of the file C:\xampp\htdocs\202210969\account.php : 0)
+
+2022-12-11 11:05:38am --  Exeption: 49 of the file C:\xampp\htdocs\202210969\account.php : 0)
+
+2022-12-11 11:07:10am --  errorNumber : 2 
+ errorString : Undefined property: customer::$getCity
+ errorFile : C:\xampp\htdocs\202210969\account.php
+ errorLineNumber : 129
+2022-12-12 11:48:44am --  Exeption: 46 of the file C:\xampp\htdocs\202210969\orders_page.php : 0)
+
+2022-12-12 12:27:07pm --  Exeption: 46 of the file C:\xampp\htdocs\202210969\orders_page.php : 0)
+
+2022-12-12 12:28:04pm --  Exeption: 46 of the file C:\xampp\htdocs\202210969\orders_page.php : 0)
+
+2022-12-12 12:28:06pm --  Exeption: 46 of the file C:\xampp\htdocs\202210969\orders_page.php : 0)
+
+2022-12-12 12:28:42pm --  Exeption: 46 of the file C:\xampp\htdocs\202210969\orders_page.php : 0)
+
+2022-12-12 12:28:53pm --  Exeption: 46 of the file C:\xampp\htdocs\202210969\orders_page.php : 0)
+
+2022-12-12 12:29:14pm --  Exeption: 46 of the file C:\xampp\htdocs\202210969\orders_page.php : 0)
+
+2022-12-12 12:29:15pm --  Exeption: 46 of the file C:\xampp\htdocs\202210969\orders_page.php : 0)
+
+2022-12-12 12:29:19pm --  Exeption: 46 of the file C:\xampp\htdocs\202210969\orders_page.php : 0)
+
+2022-12-12 12:32:53pm --  Exeption: 46 of the file C:\xampp\htdocs\202210969\orders_page.php : 0)
+
+2022-12-12 12:32:56pm --  Exeption: 46 of the file C:\xampp\htdocs\202210969\orders_page.php : 0)
+
+2022-12-12 12:33:11pm --  Exeption: 46 of the file C:\xampp\htdocs\202210969\orders_page.php : 0)
+
+2022-12-12 03:24:25pm --  Exeption: 301 of the file C:\xampp\htdocs\202210969\objects\customer.php : 23000)
+
+2022-12-12 03:24:44pm --  Exeption: 301 of the file C:\xampp\htdocs\202210969\objects\customer.php : 23000)
+
+2022-12-12 03:24:50pm --  Exeption: 301 of the file C:\xampp\htdocs\202210969\objects\customer.php : 23000)
+
+2022-12-12 03:25:02pm --  Exeption: 301 of the file C:\xampp\htdocs\202210969\objects\customer.php : 23000)
+
+2022-12-12 03:26:18pm --  Exeption: 301 of the file C:\xampp\htdocs\202210969\objects\customer.php : 23000)
+
+2022-12-12 03:27:38pm --  Exeption: 301 of the file C:\xampp\htdocs\202210969\objects\customer.php : 23000)
+
+2022-12-12 03:48:01pm --  errorNumber : 2 
+ errorString : Undefined variable $cid
+ errorFile : C:\xampp\htdocs\202210969\objects\customer.php
+ errorLineNumber : 31
+2022-12-12 04:43:59pm --  Exeption: 74 of the file C:\xampp\htdocs\202210969\account.php : 0)
+
+2022-12-12 04:54:16pm --  Exeption: 46 of the file C:\xampp\htdocs\202210969\orders_page.php : 0)
+
+2022-12-12 04:54:22pm --  Exeption: 46 of the file C:\xampp\htdocs\202210969\orders_page.php : 0)
+
+2022-12-16 02:10:45pm --  errorNumber : 2 
+ errorString : Undefined array key "prcode"
+ errorFile : C:\xampp\htdocs\202210969\objects\products.php
+ errorLineNumber : 18
+2022-12-16 02:13:15pm --  Exeption: 45 of the file C:\xampp\htdocs\202210969\orders_page.php : 0)
+
+2022-12-16 02:13:16pm --  Exeption: 19 of the file C:\xampp\htdocs\202210969\objects\product.php : 0)
+
+2022-12-16 02:14:39pm --  Exeption: 166 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-16 02:18:08pm --  Exeption: 166 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-16 02:19:09pm --  Exeption: 166 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-16 02:19:13pm --  Exeption: 166 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-16 02:19:19pm --  Exeption: 166 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-16 02:19:21pm --  Exeption: 166 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-16 02:27:55pm --  Exeption: 166 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-16 02:42:25pm --  Exeption: 166 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-16 03:17:39pm --  Exeption: 166 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-16 03:17:40pm --  Exeption: 45 of the file C:\xampp\htdocs\202210969\orders_page.php : 0)
+
+2022-12-16 03:17:43pm --  Exeption: 45 of the file C:\xampp\htdocs\202210969\orders_page.php : 0)
+
+2022-12-16 03:17:45pm --  Exeption: 166 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-16 03:17:45pm --  Exeption: 45 of the file C:\xampp\htdocs\202210969\orders_page.php : 0)
+
+2022-12-16 03:17:47pm --  Exeption: 166 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-16 03:17:52pm --  Exeption: 45 of the file C:\xampp\htdocs\202210969\orders_page.php : 0)
+
+2022-12-16 03:27:57pm --  Exeption: 166 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-16 03:30:18pm --  Exeption: 166 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-16 03:40:37pm --  Exeption: 26 of the file C:\xampp\htdocs\202210969\objects\product.php : 0)
+
+2022-12-17 09:49:26am --  Exeption: 58 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-17 09:52:29am --  Exeption: 58 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-17 09:53:34am --  errorNumber : 2 
+ errorString : Undefined array key "prcode"
+ errorFile : C:\xampp\htdocs\202210969\objects\product.php
+ errorLineNumber : 180
+2022-12-17 09:54:07am --  errorNumber : 2 
+ errorString : Undefined array key "prcode"
+ errorFile : C:\xampp\htdocs\202210969\objects\product.php
+ errorLineNumber : 180
+2022-12-17 09:54:35am --  errorNumber : 2 
+ errorString : Undefined array key "prcode"
+ errorFile : C:\xampp\htdocs\202210969\objects\product.php
+ errorLineNumber : 180
+2022-12-17 09:54:50am --  errorNumber : 2 
+ errorString : Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\202210969\common\PHPFunctions.php:244)
+ errorFile : C:\xampp\htdocs\202210969\buying.php
+ errorLineNumber : 64
+2022-12-17 09:55:38am --  errorNumber : 2 
+ errorString : Undefined array key "prdcode"
+ errorFile : C:\xampp\htdocs\202210969\buying.php
+ errorLineNumber : 69
+2022-12-17 10:49:56am --  errorNumber : 2 
+ errorString : Undefined variable $validationErrorPrdcode
+ errorFile : C:\xampp\htdocs\202210969\buying.php
+ errorLineNumber : 118
+2022-12-17 10:51:03am --  errorNumber : 2 
+ errorString : Undefined variable $validationErrorFname
+ errorFile : C:\xampp\htdocs\202210969\buying.php
+ errorLineNumber : 126
+2022-12-17 10:57:35am --  Exeption: 21 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-17 11:26:07am --  Exeption: 60 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-17 11:28:00am --  errorNumber : 2 
+ errorString : Undefined variable $baughtproduct
+ errorFile : C:\xampp\htdocs\202210969\buying.php
+ errorLineNumber : 60
+2022-12-17 11:30:31am --  Exeption: 61 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-17 11:36:27am --  Exeption: 61 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-17 11:50:42am --  errorNumber : 2 
+ errorString : Undefined variable $baughtproduct
+ errorFile : C:\xampp\htdocs\202210969\buying.php
+ errorLineNumber : 60
+2022-12-17 11:51:59am --  Exeption: 60 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-17 11:52:36am --  Exeption: 60 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-17 11:54:18am --  Exeption: 122 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-17 11:55:16am --  Exeption: 66 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-17 11:56:27am --  Exeption: 66 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-18 10:02:49am --  Exeption: 120 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-18 10:04:11am --  Exeption: 66 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-18 10:09:09am --  Exeption: 59 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-18 10:10:40am --  Exeption: 61 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-18 10:11:20am --  Exeption: 61 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-18 10:11:57am --  Exeption: 21 of the file C:\xampp\htdocs\202210969\objects\order.php : 0)
+
+2022-12-18 10:53:22am --  Exeption: 47 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+
+2022-12-18 11:00:31am --  Exeption: 45 of the file C:\xampp\htdocs\202210969\orders_page.php : 0)
+
+2022-12-18 11:00:37am --  Exeption: 47 of the file C:\xampp\htdocs\202210969\buying.php : 0)
+

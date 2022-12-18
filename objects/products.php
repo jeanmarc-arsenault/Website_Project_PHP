@@ -15,15 +15,9 @@ class products extends collection
                 
                 while($row = $rows->fetch())
                 {
-                        $this->pid= $row["PID"];
-                        $this->prcode= $row["prcode"];
-                        $this->price= $row["price"];
-                        $this->costprice= $row["costprice"];
-                        $this->info= $row["info"];
+                    $product = new product( $row["prdcode"], $row["price"], $row["costprice"], $row["info"],$row["PID"]);
                     
-                    $product = new product($row["PID"], $row["prcode"], $row["price"], $row["costprice"], $row["info"]);
-                    
-                    $this->add($row["pid"],$product);
+                    $this->add($row["PID"],$product);
                 }
           }
         

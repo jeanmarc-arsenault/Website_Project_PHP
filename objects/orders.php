@@ -15,7 +15,7 @@ class orders extends collection
                 
                 while($row = $rows->fetch())
                 {
-                    $order = new order($row["OID"], $row["PID"],$row["CID"],$row["qty"],$row["com"],$row["soldprice"],$row["orderdate"]);
+                    $order = new order( $row["PID"],$row["CID"],$row["qty"],$row["com"],$row["soldprice"],$row["orderdate"], $row["OID"]);
                     
                     $this->add($row["OID"],$order);
                 }

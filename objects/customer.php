@@ -1,6 +1,5 @@
 <?php
-
- class customer {
+class customer {
     //define dont work in object
     
     const NAME_MAX_LENGHT =20;
@@ -18,7 +17,7 @@
     private $username ="";
     private $password ="";
     
-    public function __construct($newCustomerId ="", $newFName = "", $newLName = "", $newCity = "", $newAddress = "", $newPostalCode = "",$newUsername = "", $newPassword = "", $newPicture = "" )
+    public function __construct( $newFName = "", $newLName = "", $newCity = "", $newAddress = "", $newPostalCode = "",$newUsername = "", $newPassword = "", $newPicture = "", $newCID = "" )
     {
         $this->setFirstName($newFName);
         $this->setLastName($newLName);
@@ -28,18 +27,12 @@
         $this->setUsername($newUsername);
         $this->setPassword($newPassword);
         $this->setPicture($newPicture);
-        
+        $this->cid = $newCID;
     }
     
-    public function getCustomerId($newCustomerId)
+    public function getCustomerId()
     {
-            if($newCustomerId== ""){
-                return "..canot be empty";
-            }
-            else{
-                
-                $this->cid = $newCustomerId;
-            }
+        return $this->cid;
     }
     
     public function getFirstName()
@@ -220,8 +213,8 @@
         }
         else
         {
-            $encodedPassword = encode_password($newPassword, PASSWORD_DEFAULT);
-            $this->password = $encodedPassword;
+            $encrytedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
+            $this->pass = $encrytedPassword;
             return true;
         }
     }
@@ -260,23 +253,21 @@
 
     }
     
-      function save()
+    function save()
     {
         global $connection;
         
         if($this->cid==""){//insert
-            $SQLquery = "call insert_new_customer(:firstname,:lastname,:address,:city,:postalcode,:username,:password,:picture);";
-
-            //echo $SQLquery. "<br><br>" ;
+            $SQLquery = "call insert_new_customer(:firstname,:lastname,:address,:city,:postalcode,:username,:pass,:picture);";
 
             $rows = $connection->prepare($SQLquery);
             $rows->bindParam(":firstname", $this->firstname);                                  //opional param
             $rows->bindParam(":lastname", $this->lastname);
+            $rows->bindParam(":address", $this->address);  
             $rows->bindParam(":city", $this->city);    
-            $rows->bindParam(":address", $this->address);      
             $rows->bindParam(":postalcode", $this->postalcode);
             $rows->bindParam(":username", $this->username);
-            $rows->bindParam(":password", $this->password);
+            $rows->bindParam(":pass", $this->pass);
             $rows->bindParam(":picture", $this->picture);
             
                  if($rows->execute())
@@ -285,32 +276,26 @@
                 }
         }
         else{//update
-         ##use procedeures
-         $SQLquery = "call update_customer(:cid,:firstname,:lastname,:address,:city,:postalcode,:username,:password,:picture);";
 
-         
-         
-            //echo $SQLquery. "<br><br>" ;
+         $SQLquery = "call update_customer(:cid,:firstname,:lastname,:address,:city,:postalcode,:username,:pass,:picture);";
 
             $rows = $connection->prepare($SQLquery);
-            $rows->bindParam(":cid", $this->cid);        
+            $rows->bindParam(":cid", $this->cid);
             $rows->bindParam(":firstname", $this->firstname);                                  //opional param
             $rows->bindParam(":lastname", $this->lastname);
             $rows->bindParam(":address", $this->address);      
             $rows->bindParam(":city", $this->city);      
             $rows->bindParam(":postalcode", $this->postalcode);
             $rows->bindParam(":username", $this->username);
-            $rows->bindParam(":password", $this->password);
+            $rows->bindParam(":pass", $this->pass);
             $rows->bindParam(":picture", $this->picture);    //opional param
 
-                 if($rows->execute())
+                if($rows->execute())
                 {
                     return $rows->rowcount() . "customer was updated";
                 }
         }
     }
-    
-    
     
       function delete($cid)
     {
@@ -331,8 +316,5 @@
                     return $rows->rowcount() . "customer was deleted";
                 }
     }
-
-    
-    
     
 }

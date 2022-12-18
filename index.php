@@ -18,8 +18,7 @@ define("FILE_SS3", FOLDER_PICTURES . "spaceship3.jpg");
 define("FILE_SS4", FOLDER_PICTURES . "spaceship4.jpg");
 define("FILE_SS5", FOLDER_PICTURES . "spaceship5.jpg");
 global $loggedcustomer;
-//secure https and cookie
-securepage();
+
 
 //echo "new hash is" . password_hash('enterprise', PASSWORD_DEFAULT);
 
@@ -34,7 +33,6 @@ pageTop("Home Page",'class="spaceback"',"logoshow");
 <div class="description">
     <p>We are a spaceship salvage company based around the outer rim world of Tatooine. We have recently opened another salvage yard near Ferenginar. We have expert starship repair crews revamping old classic spaceships to top condition for our clients.</p>
 <div class="<?php
-
     if($pictures[0] == FILE_SS3)
         {
             echo 'special';
@@ -43,7 +41,6 @@ pageTop("Home Page",'class="spaceback"',"logoshow");
         {
            echo 'title';
         }
-
 ?>">
 <?php
     if($pictures[0] == FILE_SS1)
@@ -64,7 +61,7 @@ pageTop("Home Page",'class="spaceback"',"logoshow");
         }
     elseif ($pictures[0] == FILE_SS5)
         {
-           echo 'YT-1300 Correlian light freighter  : 4 358 987$'; 
+           echo 'YT-1300 Correlian light freighter  : 4 358 987$';
         }
 ?>
 </div>
@@ -81,10 +78,6 @@ pageTop("Home Page",'class="spaceback"',"logoshow");
 ?>
             " src="<?php echo $pictures[0]; ?>" alt="nice space trash"/></a>
 <div/>
-
-
-
-
 <?php
                 pageBottom();
 

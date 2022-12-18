@@ -15,11 +15,20 @@ const OBJECTS_FOLDER = "objects/";
 const OBJECT_COLLECTION = OBJECTS_FOLDER . "collection.php";
 const OBJECT_CUSTOMER = OBJECTS_FOLDER . "customer.php";
 const OBJECT_CONNECTION = OBJECTS_FOLDER . "DBconnection.php";
+const OBJECT_ORDER = OBJECTS_FOLDER . "order.php";
+const OBJECT_ORDERS = OBJECTS_FOLDER . "orders.php";
 const OBJECT_CUSTOMERS = OBJECTS_FOLDER . "customers.php";
+const OBJECT_PRODUCT = OBJECTS_FOLDER . "product.php";
+const OBJECT_PRODUCTS = OBJECTS_FOLDER . "products.php";
+const TAX = 0.161;
 require_once OBJECT_CONNECTION;
 require_once OBJECT_CUSTOMER;
 require_once OBJECT_COLLECTION;
 require_once OBJECT_CUSTOMERS;
+require_once OBJECT_ORDER;
+require_once OBJECT_ORDERS;
+require_once OBJECT_PRODUCT;
+require_once OBJECT_PRODUCTS;
 
 error_reporting(E_ALL);
 set_error_handler("manageError");
@@ -61,9 +70,8 @@ function manageException($errorObject)
 {
     if(DEBUGGING)
     {
-        echo "Exeption: " . $errorObject-> getLine() . " of the file " . $errorObject-> getFile() . " : "  . $errorObject-> getCode() . ")\n\n" ;
+        echo "Exeption: At Line :" . $errorObject-> getLine() . " of the file " . $errorObject-> getFile() . " : "  . $errorObject-> getCode() . $errorObject-> getMessage() . ")\n\n" ;
 
-        
     }
     else{
       echo "An exception has occured contact your administrator";
@@ -71,9 +79,9 @@ function manageException($errorObject)
     
         //creating exceptionlog file
 
-        $myFile = fopen(FOLDER_PHPFUNCTIONS . "ErrorLogs.txt", "a") or die("Unable to create the file\n");
+        $myFile = fopen(FOLDER_PHPFUNCTIONS . "ErrorLogs.txt", "a") or die("Unable to create the file\r\n");
 
-        fwrite($myFile, date("Y-m-d h:i:sa") . " --  Exeption: " . $errorObject-> getLine() . " of the file " . $errorObject-> getFile() . " : "  . $errorObject-> getCode() . ")\n\n");
+        fwrite($myFile, date("Y-m-d h:i:sa") . " --  Exeption: " . $errorObject-> getLine() . " of the file " . $errorObject-> getFile() . " : "  . $errorObject-> getCode() .  $errorObject-> getMessage() .")\r\n\r\n");
         
         fclose($myFile); 
     
@@ -123,15 +131,13 @@ function login($username, $pass,)
     {
         while ($row = $rows->fetch())
         {   
-            if(password_verify($pass, $row["password"]))
+            if(password_verify($pass, $row["pass"]))
             {
                 //create cookie 
                 $_SESSION["loggedUser"] = $row["cid"];
                 $page = $_SERVER['SCRIPT_NAME'];
                 header('location: ' . $page);
                 return true;
-                
-
             }
             else{
                    return false;
@@ -174,6 +180,10 @@ define("IMAGE_LOGO", FOLDER_MEDIA . "trashspaceship.jpg");
 define("IMAGE_SPACE_BACKGROUND", FOLDER_MEDIA . "space.jpg");
 
 function pageTop($Title, $body, $logo){
+    
+    
+//secure https and cookie
+securepage();
 ?>
 <!DOCTYPE html>
     <html>
@@ -232,6 +242,7 @@ global $loggedUser;
     if($loggedUser != ""){
 
         echo "Welcome " . $loggedcustomer->getFirstName() . " " . $loggedcustomer->getLastName();
+        echo '<img class="customerportraitshow" src=" data:image;base64,' . base64_encode($loggedcustomer->getPicture()).'"/>';
         $page = $_SERVER['PHP_SELF'];
     ?>
                 
@@ -270,7 +281,7 @@ function pageBottom(){
 
 ?>
                 </div>
-                <footer>Copyright Jean-Marc Arsenault (2210969) 
+    <footer>Copyright Jean-Marc Arsenault (2210969) 
 <?=
                     date("Y");
 ?>. </footer>

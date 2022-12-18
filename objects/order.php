@@ -15,27 +15,24 @@
     private $orderdate ="";
 
     
-    public function __construct( $newOrderId ="", $newproductId ="", $newcustomerId ="", $newQty ="",$newCom ="",$newSoldPrice ="" )
+    public function __construct(  $newproductId ="", $newcustomerId ="", $newQty ="",$newCom ="",$newSoldPrice ="" ,$neworderdate="",$newOrderId ="")
     {
         $this->setPID($newproductId);
         $this->setCID($newcustomerId);
         $this->setQty($newQty);
         $this->setCom($newCom);
         $this->setSoldPrice($newSoldPrice);
+        $this->orderdate = $neworderdate;
+        $this->oid = $newOrderId;
         
     }
     
-    public function getOrderId($newOrderId)
+    public function getOrderId()
     {
-            if($newOrderId== ""){
-                return "..canot be empty";
-            }
-            else{
-                $this->oid = $newOrderId;
-            }
+        return $this->oid;
     }
     
-        public function getPID()
+    public function getPID()
     {
         return $this->pid;
     }
@@ -61,6 +58,31 @@
         }
     }
 
+    public function getCID()
+    {
+        return $this->cid;
+    }
+    
+    public function setCID($newcustomerId)
+    {
+        if($newcustomerId == "")
+        {
+            return "CID canot be empty";
+        }
+        else
+        {
+            if((mb_strlen($newcustomerId) > self::ID_MAX_MIN_LENGHT) && ( mb_strlen($newcustomerId) < self::ID_MAX_MIN_LENGHT))
+            {
+                return "CID has to be exactly " . self::ID_MAX_MIN_LENGHT . " characters";
+            }
+            else
+            {
+                $this->cid = $newcustomerId;
+                return true;
+            }
+            
+        }
+    }
 
     public function getQty()
     {
@@ -136,6 +158,11 @@
         }
     }
     
+    
+    public function getDate()
+    {
+        return $this->orderdate;
+    }
 
     //Methhods
     

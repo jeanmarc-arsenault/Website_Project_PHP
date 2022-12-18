@@ -10,6 +10,12 @@ securepage();
 
 readCookie();
 
+if(isset($_POST["main"]))
+    {
+        header('location: index.php');
+    }
+
+
 if($loggedcustomer == null){
     $accounttype="Registration Information";
     if(isset($_POST["register"]))
@@ -23,31 +29,55 @@ if($loggedcustomer == null){
         $city = htmlspecialchars($_POST["city"]);
         $postalcode = htmlspecialchars($_POST["postalcode"]);
         $username = htmlspecialchars($_POST["username"]);
-        $password = htmlspecialchars($_POST["password"]);
+        $password = htmlspecialchars($_POST["pass"]);
 
         $picture = null;
-
+        
+        if($_FILES["picture"]["error"] == UPLOAD_ERR_OK && is_uploaded_file($_FILES["picture"]["tmp_name"]))
+        {
+            $picture = file_get_contents($_FILES["picture"]["tmp_name"]);
+        }
+        else{
+            //debug to remove
+            echo "file not on disk";
+        }
+        
         $thisCustomer = new customer($firstname, $lastname, $address, $city, $postalcode, $username, $password, $picture);
         $thisCustomer->save();
-            
+        
+        
         if($picture != null)
         {
-            echo '<img src=" data:image;base64,' . base64_encode($row["picture"]).'"/>';
+            echo '<img class="customerportraitshow" src=" data:image;base64,' . base64_encode($picture).'"/>';
         }
         else
         {
             echo "picture not loaded!";
 
         }
+
+
     }
 }
 else{
     //update customer
+    global $loggedcustomer;
     $accounttype="Account Information";
-    
-    if(isset($_POST["Update"]))
-    {
 
+    //$thisCustomer = $loggedcustomer->load($loggedcustomer->getCustomerId());
+    $picture = $loggedcustomer->getPicture();
+        if($picture != null)//show customer picture
+        {
+            echo '<img class="customerportraitshow" src=" data:image;base64,' . base64_encode($picture).'"/>';
+        }
+        else
+        {
+            echo "picture not loaded!";
+        }
+    
+    
+    if(isset($_POST["update"]))
+    {
         
         global $connection;
         $firstname = htmlspecialchars($_POST["firstname"]);
@@ -56,48 +86,36 @@ else{
         $city = htmlspecialchars($_POST["city"]);
         $postalcode = htmlspecialchars($_POST["postalcode"]);
         $username = htmlspecialchars($_POST["username"]);
-        $password = htmlspecialchars($_POST["password"]);
+        $password = htmlspecialchars($_POST["pass"]);
+        $picture = $loggedcustomer->getPicture();
 
-        $picture = null;
-        
-        if($_FILE["picture"]["error"] == UPLOAD_ERR_OK && is_uploaded_file($_FILES["picture"]["error"]))
+        //load picture
+        if($_FILES["picture"]["error"] == UPLOAD_ERR_OK && is_uploaded_file($_FILES["picture"]["tmp_name"]))
         {
-            $pictureFile = file_get_contents($_FILES["picture"]["tmp_name"]);
+            $picture = file_get_contents($_FILES["picture"]["tmp_name"]);
         }
         else{
-            echo "file not on disk";
-        }
-
-        $thisCustomer = load($loggedcustomer);
-        $thisCustomer->setFirstName($firstname);
-        $thisCustomer->setLastName($lastname);
-        $thisCustomer->setAddress($address);
-        $thisCustomer->setCity($city);
-        $thisCustomer->setPostalcode($postalcode);
-        $thisCustomer->setUsername($username);
-        $thisCustomer->setPassword($password);
-        $thisCustomer->setPicture($picture);
-        $thisCustomer->save();
-        
-        if($_FILES["picture"]["error"] == UPLOAD_ERR_OK && is_uploaded_file($_FILES["picture"]["error"]))
-        {
-            $newPicture = file_get_contents($_FILES["picture"]["tmp_name"]);
-            
-        }
-        else{
-            //error
-            echo "there is an error geting the image file!";
+            echo $_FILES["picture"]["error"];
         }
         
-        if($picture != null)
+        if($picture != null)//show customer picture
         {
-            echo '<img src=" data:image;base64,' . base64_encode($row["picture"]) . '"/>';
+            echo '<img class="customerportraitshow" src=" data:image;base64,' . base64_encode($picture).'"/>';
         }
         else
         {
             echo "picture not loaded!";
-
         }
+        
+        $loggedcustomer->setFirstName($firstname);
+        $loggedcustomer->setLastName($lastname);
+        $loggedcustomer->setAddress($address);
+        $loggedcustomer->setCity($city);
+        $loggedcustomer->setPostalcode($postalcode);
+        $loggedcustomer->setUsername($username);
+        $loggedcustomer->setPassword($password);
+        $loggedcustomer->setPicture($picture);
+        $loggedcustomer->save();
     }
     
 }
@@ -115,13 +133,33 @@ else{
         
         <h1 class="title"><strong><?php echo $accounttype; ?></strong></h1>
         <br>
-        <br>First name: <input type="txt" name="firstname">
-        <br>Last name: <input type="txt" name="lastname">
-        <br>Address: <input type="txt" name="address">
-        <br>City: <input type="txt" name="city">
-        <br>Postal Code: <input type="txt" name="postalcode">
+        <br>First name: <input type="txt" name="firstname" <?php 
+        if($accounttype=="Account Information"){
+            echo 'value="' . $loggedcustomer->getFirstName() . '"';
+        }
+                    ?> >
+        <br>Last name: <input type="txt" name="lastname" <?php 
+        if($accounttype=="Account Information"){
+        echo 'value="' . $loggedcustomer->getLastName() . '"';
+        }
+                    ?> >
+        <br>Address: <input type="txt" name="address" <?php 
+        if($accounttype=="Account Information"){
+        echo 'value="' . $loggedcustomer->getAddress() . '"';
+        }
+                    ?> >
+        <br>City: <input type="txt" name="city" <?php 
+        if($accounttype=="Account Information"){
+        echo 'value="' . $loggedcustomer->getCity() . '"';
+        }
+                    ?> >
+        <br>Postal Code: <input type="txt" name="postalcode" <?php 
+        if($accounttype=="Account Information"){
+        echo 'value="' . $loggedcustomer->getPostalcode() . '"';
+        }
+                    ?> >
         <br>Username: <input type="txt" name="username">
-        <br>Password: <input type="txt" name="password">
+        <br>Password: <input type="password" name="pass">
         <br>Picture:<input type="file" name="picture">
 <?php
 if($accounttype=="Registration Information"){
@@ -131,6 +169,6 @@ else{
     echo '<br><input type="submit" name="update" value="update">';
 }
 ?>
-        
+        <br><input type="submit" name="main" value="Return to Home Page">
     </form>
 </div>
