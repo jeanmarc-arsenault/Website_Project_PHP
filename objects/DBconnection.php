@@ -1,7 +1,7 @@
 <?php
 
 define("DB_PASSWORD", "123");//must change to 
-define("DB_NAME", "root");
+define("DB_NAME", "USER2210969");
 define("DB_MYSQLCOMMAND", "mysql:host=127.0.0.1;dbname=usedspaceshipsdb");
 
 //use constant fro server user password

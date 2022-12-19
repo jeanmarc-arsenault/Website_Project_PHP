@@ -56,7 +56,10 @@ if($loggedcustomer == null){
 
         }
 
+        echo "<script> location.href='". HOME_PAGE ."'; </script>";
 
+        exit;
+        
     }
 }
 else{

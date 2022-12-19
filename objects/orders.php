@@ -7,7 +7,7 @@ class orders extends collection
     function __construct()
     {
         global $connection;
-        $SQLquery = "CALL select_all_orderss()";
+        $SQLquery = "CALL select_all_orders()";
         
         $rows = $connection->prepare($SQLquery);
         

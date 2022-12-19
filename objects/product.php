@@ -59,6 +59,55 @@
         return $this->costprice;
     }
     
+
+    
+    public function getPrdCode()
+    {
+        return $this->prdcode;
+    }
+    
+    public function setPrCode($newPrdcode)
+    {
+        if($newPrdcode == "")
+        {
+            return "prdcode canot be empty";
+        }
+        else
+        {
+            if((mb_strlen($newPrdcode) > self::PRCODE_MAX_LENGHT) )
+            {
+                return "Prdcode can go to maximum  " . self::PRCODE_MAX_LENGHT . " characters";
+            }
+            else
+            {
+                $this->prdcode = $newPrdcode;
+                return true;
+            }
+            
+        }
+    }
+
+    public function getINFO()
+    {
+        return $this->info;
+    }
+    
+    public function setINFO($newInfo)
+    {
+
+            if((mb_strlen($newInfo) > self::INFO_MAX_LENGHT) )
+            {
+                return "Info can go to maximum  " . self::INFO_MAX_LENGHT . " characters";
+            }
+            else
+            {
+                $this->info = $newInfo;
+                return true;
+            }
+            
+
+    }
+    
     public function setCostPrice($newCostPrice)
     {
         if($newCostPrice == "")
@@ -79,59 +128,11 @@
             
         }
     }
-    
-    public function getPrdCode()
-    {
-        return $this->prdcode;
-    }
-    
-    public function setPrCode($newPrdcode)
-    {
-        if($newPrdcode == "")
-        {
-            return "prcode canot be empty";
-        }
-        else
-        {
-            if((mb_strlen($newPrdcode) > self::PRCODE_MAX_LENGHT) )
-            {
-                return "Prcode can go to maximum  " . self::PRCODE_MAX_LENGHT . " characters";
-            }
-            else
-            {
-                $this->prdcode = $newPrdcode;
-                return true;
-            }
-            
-        }
-    }
-
-    public function getINFO()
-    {
-        return $this->com;
-    }
-    
-    public function setINFO($newInfo)
-    {
-
-            if((mb_strlen($newInfo) > self::INFO_MAX_LENGHT) )
-            {
-                return "Info can go to maximum  " . self::INFO_MAX_LENGHT . " characters";
-            }
-            else
-            {
-                $this->com = $newInfo;
-                return true;
-            }
-            
-
-    }
-
 
         
     public function getSoldPrice()
     {
-        return $this->cid;
+        return $this->price;
     }
     
     public function setSoldPrice($newSoldPrice)
@@ -148,15 +149,14 @@
             }
             else
             {
-                $this->cid = $newSoldPrice;
+                $this->price = $newSoldPrice;
                 return true;
             }
             
         }
     }
     
-
-    //Methhods
+    //Methods
     
     function load($pid)
     {
@@ -166,7 +166,6 @@
         ##use procedures
         $SQLquery = "CALL select_one_product(:PID)";
         
-        //echo $SQLquery. "<br><br>" ;
         
         $rows = $connection->prepare($SQLquery);
         
@@ -177,11 +176,10 @@
                while($row = $rows->fetch())
                    {
                         $this->pid= $row["PID"];
-                        $this->prdcode= $row["prdcode"];
+                        $this->prdcode =$row["prdcode"] ;
                         $this->price= $row["price"];
                         $this->costprice= $row["costprice"];
                         $this->info= $row["info"];
-
 
                        return true;
                    }
@@ -194,12 +192,11 @@
         global $connection;
         
         if($this->oid==""){//insert
-            $SQLquery = "call insert_new_product(:prcode, :price,:costprice,:info);";
+            $SQLquery = "call insert_new_product(:prdcode, :price,:costprice,:info);";
 
-            //echo $SQLquery. "<br><br>" ;
 
             $rows = $connection->prepare($SQLquery);
-            $rows->bindParam(":prcode", $this->prcode);
+            $rows->bindParam(":prdcode", $this->prdcode);
             $rows->bindParam(":price", $this->price);
             $rows->bindParam(":costprice", $this->price);
             $rows->bindParam(":info", $this->info);
@@ -211,15 +208,14 @@
         }
         else{//update
          ##use procedeures
-         $SQLquery = "call 'update_product(:PID,:prcode,:price,:costprice,:info)';";
+         $SQLquery = "call 'update_product(:PID,:prdcode,:price,:costprice,:info)';";
 
          
          
-            //echo $SQLquery. "<br><br>" ;
 
             $rows = $connection->prepare($SQLquery);
             $rows->bindParam(":PID", $this->pid);
-            $rows->bindParam(":prcode", $this->prcode);
+            $rows->bindParam(":prdcode", $this->prdcode);
             $rows->bindParam(":price", $this->price);
             $rows->bindParam(":costprice", $this->price);
             $rows->bindParam(":info", $this->info);
@@ -237,7 +233,6 @@
         ##use procedeures
      $SQLquery = 'call "delete_product(:PID);"';
 
-            //echo $SQLquery. "<br><br>" ;
 
             $rows = $connection->prepare($SQLquery);
             $rows->bindParam(":PID", $this->$pid);        

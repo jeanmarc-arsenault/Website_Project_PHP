@@ -11,6 +11,7 @@ define("FOLDER_ORDERS", "data/");
 define("HOME_PAGE", "index.php");
 define("ORDERS_PAGE", "orders_page.php");
 define("BUYING_PAGE", "buying.php");
+
 const OBJECTS_FOLDER = "objects/";
 const OBJECT_COLLECTION = OBJECTS_FOLDER . "collection.php";
 const OBJECT_CUSTOMER = OBJECTS_FOLDER . "customer.php";
@@ -20,7 +21,7 @@ const OBJECT_ORDERS = OBJECTS_FOLDER . "orders.php";
 const OBJECT_CUSTOMERS = OBJECTS_FOLDER . "customers.php";
 const OBJECT_PRODUCT = OBJECTS_FOLDER . "product.php";
 const OBJECT_PRODUCTS = OBJECTS_FOLDER . "products.php";
-const TAX = 0.161;
+const TAX = 0.137;
 require_once OBJECT_CONNECTION;
 require_once OBJECT_CUSTOMER;
 require_once OBJECT_COLLECTION;
@@ -34,13 +35,15 @@ error_reporting(E_ALL);
 set_error_handler("manageError");
 set_exception_handler("manageException");
 
+
+
 header('Content-type: text/html; charset=utf-8');
 //w3c
 header("Expires: Sat, 26 Jul 2024 05:00:00 GMT");
 header("Cache-Control:no-cache");
 header("Pragma:no-cache");
 //constants
-define("DEBUGGING", true);
+define("DEBUGGING", false);
 
 $globalCID = "";
 
@@ -171,6 +174,9 @@ function deleteCookie()
     exit();
 }
 
+
+
+
 ///////////////////////////////
 
 define("FOLDER_CSS", "css/");
@@ -190,6 +196,7 @@ securepage();
         <head>
                 <link rel="stylesheet" href= <?php echo FILE_CSS; ?>>
                 <meta charset="UTF-8">
+                <script language="javascript" type="text/javascript" src="js/ajax.js"></script>
 <title><?= $Title ?></title>
         </head>
             <body <?php echo $body  ?> >
@@ -264,21 +271,19 @@ global $loggedUser;
             Username:
             <input type="text" name="user">
             Password:
-            <input type="text" name="password">
+            <input type="password" name="password">
             <input type="submit" name="login" value="Login">
         </form>
 <?php
     }
 ?>
                 <div>
-                    <p class="title">Welcome to the Tatooine Used Spaceships Emporium</p>
+                    <p class="title">Tatooine Used Spaceships Emporium</p>
                 </div>
 <?php
 }
 
 function pageBottom(){
-    
-
 ?>
                 </div>
     <footer>Copyright Jean-Marc Arsenault (2210969) 
@@ -288,7 +293,5 @@ function pageBottom(){
             </body>
     </html>
 <?php
-
-
 }
-?>
+

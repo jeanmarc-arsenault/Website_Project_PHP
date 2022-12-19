@@ -158,7 +158,6 @@
         }
     }
     
-    
     public function getDate()
     {
         return $this->orderdate;
@@ -170,12 +169,9 @@
     {
         
         global $connection;
-        
         ##use procedures
         $SQLquery = "CALL select_one_order(:oid)";
-        
-        //echo $SQLquery. "<br><br>" ;
-        
+
         $rows = $connection->prepare($SQLquery);
         
         $rows->bindParam(":oid",$oid, PDO::PARAM_STR);                         //opional param
@@ -194,7 +190,6 @@
                        return true;
                    }
            }
-
     }
     
       function save()
@@ -204,7 +199,6 @@
         if($this->oid==""){//insert
             $SQLquery = "call insert_new_order(:pid, :cid,:qty,:com,:soldprice);";
 
-            //echo $SQLquery. "<br><br>" ;
 
             $rows = $connection->prepare($SQLquery);
             
@@ -222,11 +216,9 @@
         }
         else{//update
          ##use procedeures
-         $SQLquery = "call 'update_order(:OID, :PID, :cid,:qty,:com,:soldprice)';";
+         $SQLquery = "call update_order(:OID, :PID, :cid,:qty,:com,:soldprice);";
 
          
-         
-            echo $SQLquery. "<br><br>" ;
 
             $rows = $connection->prepare($SQLquery);
             $rows->bindParam(":OID", $this->oid);
@@ -249,11 +241,10 @@
     {
         global $connection;
         ##use procedeures
-     $SQLquery = 'call "delete_order(:OID);"';
+     $SQLquery = 'call delete_order(:OID);';
 
          
          
-            //echo $SQLquery. "<br><br>" ;
 
             $rows = $connection->prepare($SQLquery);
             $rows->bindParam(":OID", $this->$oid);        

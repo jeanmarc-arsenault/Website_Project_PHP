@@ -810,3 +810,223 @@
 
 2022-12-18 11:00:37am --  Exeption: 47 of the file C:\xampp\htdocs\202210969\buying.php : 0)
 
+2022-12-18 02:22:44pm --  errorNumber : 2 
+ errorString : Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\202210969\common\PHPFunctions.php:245)
+ errorFile : C:\xampp\htdocs\202210969\buying.php
+ errorLineNumber : 102
+2022-12-18 02:26:53pm --  errorNumber : 2 
+ errorString : Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\202210969\common\PHPFunctions.php:245)
+ errorFile : C:\xampp\htdocs\202210969\buying.php
+ errorLineNumber : 100
+2022-12-18 02:29:03pm --  errorNumber : 2 
+ errorString : Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\202210969\common\PHPFunctions.php:245)
+ errorFile : C:\xampp\htdocs\202210969\buying.php
+ errorLineNumber : 100
+2022-12-18 02:29:45pm --  errorNumber : 2 
+ errorString : Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\202210969\common\PHPFunctions.php:245)
+ errorFile : C:\xampp\htdocs\202210969\buying.php
+ errorLineNumber : 100
+2022-12-18 02:31:49pm --  Exeption: 44 of the file C:\xampp\htdocs\202210969\orders_page.php : 0Undefined constant "FILE_ORDERS")
+
+2022-12-18 02:34:46pm --  Exeption: 80 of the file C:\xampp\htdocs\202210969\buying.php : 0Unsupported operand types: string * string)
+
+2022-12-18 02:34:57pm --  Exeption: 101 of the file C:\xampp\htdocs\202210969\buying.php : 0Call to undefined function setTimeout())
+
+2022-12-18 02:39:56pm --  Exeption: 44 of the file C:\xampp\htdocs\202210969\orders_page.php : 0Undefined constant "FILE_ORDERS")
+
+2022-12-18 02:39:56pm --  Exeption: 47 of the file C:\xampp\htdocs\202210969\buying.php : 0Call to a member function getFirstName() on null)
+
+2022-12-18 02:45:10pm --  Exeption: 44 of the file C:\xampp\htdocs\202210969\orders_page.php : 0Undefined constant "FILE_ORDERS")
+
+2022-12-18 03:02:34pm --  Exeption: 44 of the file C:\xampp\htdocs\202210969\orders_page.php : 0Undefined constant "FILE_ORDERS")
+
+2022-12-18 03:05:55pm --  Exeption: 44 of the file C:\xampp\htdocs\202210969\orders_page.php : 0Undefined constant "FILE_ORDERS")
+
+2022-12-18 03:08:50pm --  Exeption: 44 of the file C:\xampp\htdocs\202210969\orders_page.php : 0Undefined constant "FILE_ORDERS")
+
+2022-12-18 06:06:48pm --  Exeption: 14 of the file C:\xampp\htdocs\202210969\objects\orders.php : 42000SQLSTATE[42000]: Syntax error or access violation: 1305 PROCEDURE usedspaceshipsdb.select_all_orderss does not exist)
+
+2022-12-18 06:07:57pm --  errorNumber : 2 
+ errorString : Undefined property: customer::$orders
+ errorFile : C:\xampp\htdocs\202210969\orders_page.php
+ errorLineNumber : 47
+2022-12-18 06:38:51pm --  Exeption: 203 of the file C:\xampp\htdocs\202210969\common\PHPFunctions.php : 0Call to undefined function load())
+
+2022-12-18 06:41:48pm --  Exeption: 203 of the file C:\xampp\htdocs\202210969\common\PHPFunctions.php : 0Call to undefined function load())
+
+2022-12-18 06:42:52pm --  Exeption: 170 of the file C:\xampp\htdocs\202210969\objects\product.php : HY000SQLSTATE[HY000]: General error: 2014 Cannot execute queries while there are pending result sets. Consider unsetting the previous PDOStatement or calling PDOStatement::closeCursor())
+
+2022-12-18 07:06:03pm --  Exeption: 217 of the file C:\xampp\htdocs\202210969\common\PHPFunctions.php : 0Call to undefined method order::getOrderDate())
+
+2022-12-18 07:07:20pm --  errorNumber : 2 
+ errorString : Undefined variable $color
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 241
+2022-12-18 07:11:12pm --  errorNumber : 2 
+ errorString : Undefined variable $color
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 241
+2022-12-18 07:11:20pm --  errorNumber : 2 
+ errorString : Undefined variable $color
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 241
+2022-12-18 07:12:58pm --  errorNumber : 2 
+ errorString : Undefined variable $color
+ errorFile : C:\xampp\htdocs\202210969\common\PHPFunctions.php
+ errorLineNumber : 240
+2022-12-18 07:21:08pm --  errorNumber : 2 
+ errorString : Undefined variable $color
+ errorFile : C:\xampp\htdocs\202210969\searchedtime.php
+ errorLineNumber : 67
+2022-12-18 07:23:09pm --  errorNumber : 2 
+ errorString : Undefined variable $color
+ errorFile : C:\xampp\htdocs\202210969\searchedtime.php
+ errorLineNumber : 67
+2022-12-18 07:23:10pm --  errorNumber : 2 
+ errorString : Undefined variable $color
+ errorFile : C:\xampp\htdocs\202210969\searchedtime.php
+ errorLineNumber : 67
+2022-12-18 07:23:10pm --  errorNumber : 2 
+ errorString : Undefined variable $color
+ errorFile : C:\xampp\htdocs\202210969\searchedtime.php
+ errorLineNumber : 67
+2022-12-18 07:23:11pm --  errorNumber : 2 
+ errorString : Undefined variable $color
+ errorFile : C:\xampp\htdocs\202210969\searchedtime.php
+ errorLineNumber : 67
+2022-12-18 07:28:03pm --  errorNumber : 2 
+ errorString : Undefined variable $color
+ errorFile : C:\xampp\htdocs\202210969\searchedtime.php
+ errorLineNumber : 67
+2022-12-18 07:29:03pm --  errorNumber : 2 
+ errorString : Undefined variable $color
+ errorFile : C:\xampp\htdocs\202210969\searchedtime.php
+ errorLineNumber : 67
+2022-12-18 07:40:37pm --  errorNumber : 2 
+ errorString : Undefined variable $color
+ errorFile : C:\xampp\htdocs\202210969\searchedtime.php
+ errorLineNumber : 69
+2022-12-18 07:42:48pm --  errorNumber : 2 
+ errorString : Undefined variable $color
+ errorFile : C:\xampp\htdocs\202210969\searchedtime.php
+ errorLineNumber : 70
+2022-12-18 07:47:48pm --  errorNumber : 2 
+ errorString : Undefined variable $color
+ errorFile : C:\xampp\htdocs\202210969\searchedtime.php
+ errorLineNumber : 68
+2022-12-18 07:58:11pm --  errorNumber : 2 
+ errorString : Undefined variable $color
+ errorFile : C:\xampp\htdocs\202210969\searchedtime.php
+ errorLineNumber : 62
+2022-12-18 08:00:08pm --  errorNumber : 2 
+ errorString : Undefined variable $color
+ errorFile : C:\xampp\htdocs\202210969\searchedtime.php
+ errorLineNumber : 60
+2022-12-18 08:02:35pm --  errorNumber : 2 
+ errorString : Undefined variable $color
+ errorFile : C:\xampp\htdocs\202210969\searchedtime.php
+ errorLineNumber : 59
+2022-12-18 08:04:03pm --  errorNumber : 2 
+ errorString : Undefined variable $color
+ errorFile : C:\xampp\htdocs\202210969\searchedtime.php
+ errorLineNumber : 59
+2022-12-18 08:16:21pm --  errorNumber : 2 
+ errorString : Undefined variable $color
+ errorFile : C:\xampp\htdocs\202210969\searchedtime.php
+ errorLineNumber : 60
+2022-12-18 08:20:14pm --  errorNumber : 2 
+ errorString : Undefined variable $color
+ errorFile : C:\xampp\htdocs\202210969\searchedtime.php
+ errorLineNumber : 60
+2022-12-18 08:20:44pm --  errorNumber : 2 
+ errorString : Undefined variable $color
+ errorFile : C:\xampp\htdocs\202210969\searchedtime.php
+ errorLineNumber : 60
+2022-12-18 08:21:52pm --  errorNumber : 2 
+ errorString : Undefined variable $color
+ errorFile : C:\xampp\htdocs\202210969\searchedtime.php
+ errorLineNumber : 60
+2022-12-18 08:24:03pm --  errorNumber : 2 
+ errorString : Undefined variable $color
+ errorFile : C:\xampp\htdocs\202210969\searchedtime.php
+ errorLineNumber : 60
+2022-12-18 08:24:15pm --  errorNumber : 2 
+ errorString : Undefined variable $color
+ errorFile : C:\xampp\htdocs\202210969\searchedtime.php
+ errorLineNumber : 60
+2022-12-18 08:27:05pm --  errorNumber : 2 
+ errorString : Undefined variable $color
+ errorFile : C:\xampp\htdocs\202210969\searchedtime.php
+ errorLineNumber : 60
+2022-12-18 08:27:06pm --  errorNumber : 2 
+ errorString : Undefined variable $color
+ errorFile : C:\xampp\htdocs\202210969\searchedtime.php
+ errorLineNumber : 60
+2022-12-18 08:28:15pm --  errorNumber : 2 
+ errorString : Undefined variable $color
+ errorFile : C:\xampp\htdocs\202210969\searchedtime.php
+ errorLineNumber : 60
+2022-12-18 08:31:57pm --  errorNumber : 2 
+ errorString : Undefined variable $color
+ errorFile : C:\xampp\htdocs\202210969\searchedtime.php
+ errorLineNumber : 61
+2022-12-18 08:36:01pm --  errorNumber : 2 
+ errorString : Undefined variable $color
+ errorFile : C:\xampp\htdocs\202210969\searchedtime.php
+ errorLineNumber : 61
+2022-12-18 08:38:06pm --  errorNumber : 2 
+ errorString : Undefined variable $color
+ errorFile : C:\xampp\htdocs\202210969\searchedtime.php
+ errorLineNumber : 61
+2022-12-18 08:39:00pm --  Exeption: 178 of the file C:\xampp\htdocs\202210969\objects\product.php : 0Call to undefined method PDOStatement::fetch_array())
+
+2022-12-18 08:40:09pm --  Exeption: 178 of the file C:\xampp\htdocs\202210969\objects\product.php : 0Call to undefined method PDOStatement::fetch_assoc())
+
+2022-12-18 08:45:00pm --  Exeption: 177 of the file C:\xampp\htdocs\202210969\objects\product.php : 0Call to undefined method PDOStatement::num_rows())
+
+2022-12-18 08:52:08pm --  Exeption: 174 of the file C:\xampp\htdocs\202210969\objects\product.php : 42000SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'aa40f-7f37-11ed-9c4b-5c61992780fa)' at line 1)
+
+2022-12-18 08:56:01pm --  Exeption: 181 of the file C:\xampp\htdocs\202210969\objects\product.php : 0Call to undefined method PDOStatement::num_rows())
+
+2022-12-18 08:57:11pm --  Exeption: 182 of the file C:\xampp\htdocs\202210969\objects\product.php : 0Call to undefined method PDOStatement::fetch_assoc())
+
+2022-12-18 08:58:00pm --  Exeption: 182 of the file C:\xampp\htdocs\202210969\objects\product.php : 0Call to undefined method PDOStatement::FETCH_ASSOC())
+
+2022-12-18 08:59:42pm --  errorNumber : 2 
+ errorString : Undefined property: PDOStatement::$PDO
+ errorFile : C:\xampp\htdocs\202210969\objects\product.php
+ errorLineNumber : 182
+2022-12-18 09:02:54pm --  Exeption: 182 of the file C:\xampp\htdocs\202210969\objects\product.php : 0Call to undefined method PDOStatement::FETCH_ASSOC())
+
+2022-12-18 09:03:52pm --  Exeption: 182 of the file C:\xampp\htdocs\202210969\objects\product.php : 0Call to undefined method PDOStatement::FETCH_OBJECT())
+
+2022-12-18 09:05:08pm --  Exeption: 182 of the file C:\xampp\htdocs\202210969\objects\product.php : 0Call to undefined method PDOStatement::fetch_object())
+
+2022-12-18 09:11:14pm --  Exeption: 174 of the file C:\xampp\htdocs\202210969\objects\product.php : 0Call to undefined method PDO::stat())
+
+2022-12-18 09:11:51pm --  Exeption: 183 of the file C:\xampp\htdocs\202210969\objects\product.php : 0Call to undefined method PDOStatement::fetch_object())
+
+2022-12-18 09:30:29pm --  errorNumber : 2 
+ errorString : Undefined property: customer::$getFirstName
+ errorFile : C:\xampp\htdocs\202210969\orders_page.php
+ errorLineNumber : 49
+2022-12-18 09:37:03pm --  errorNumber : 2 
+ errorString : Undefined variable $color
+ errorFile : C:\xampp\htdocs\202210969\searchedtime.php
+ errorLineNumber : 61
+2022-12-18 09:39:51pm --  errorNumber : 2 
+ errorString : Undefined variable $color
+ errorFile : C:\xampp\htdocs\202210969\searchedtime.php
+ errorLineNumber : 61
+2022-12-18 09:46:09pm --  errorNumber : 2 
+ errorString : Undefined variable $color
+ errorFile : C:\xampp\htdocs\202210969\searchedtime.php
+ errorLineNumber : 61
+2022-12-18 09:51:41pm --  errorNumber : 2 
+ errorString : Undefined variable $color
+ errorFile : C:\xampp\htdocs\202210969\searchedtime.php
+ errorLineNumber : 63
+2022-12-18 10:54:53pm --  Exeption: 49 of the file C:\xampp\htdocs\202210969\orders_page.php : 0Call to a member function getFirstName() on null)
+
+2022-12-18 11:49:30pm --  Exeption: 26 of the file C:\xampp\htdocs\202210969\objects\order.php : 0Undefined constant "oid")
+

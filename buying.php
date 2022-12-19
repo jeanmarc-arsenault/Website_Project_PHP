@@ -36,7 +36,7 @@ $baughtproduct = new product();
 
 
 $products = new products();
-$product =new product();
+$product = new product();
 
 
 
@@ -44,9 +44,7 @@ pageTop("Buying",'class="spaceback"',"logoshow");
 
 global $loggedcustomer;
 
-$fname = $loggedcustomer->getFirstName();
-$lname = $loggedcustomer->getLastName();
-$city = $loggedcustomer->getCity();
+
 
 
 #validation
@@ -54,15 +52,14 @@ if(isset($_POST["buy"]))  #strlen > 20
 {
     global $loggedcustomer;
     global $baughtproduct;
-    var_dump($_POST["products"]);
     $baughtproduct->load($_POST["products"]);
-
+    
     $fname = $loggedcustomer->getFirstName();
     $lname = $loggedcustomer->getLastName();
     $city = $loggedcustomer->getCity();
     $com = htmlspecialchars($_POST["com"]);
     $qty = htmlspecialchars($_POST["qty"]);
-    $price = $baughtproduct->getPrice() * $qty ;
+    $price = $baughtproduct->getPrice();
 
     if(strlen($com) >= 200){
         $validationErrorCom = "Maximum comment lenght is 200 characters!";
@@ -86,19 +83,31 @@ if(isset($_POST["buy"]))  #strlen > 20
         
         
 
-        $thisOrder = new order( $newproductId = $_POST["products"], $newcustomerId = $loggedcustomer->getCustomerId() , $newQty= $qty, $newCom =$com, $newSoldPrice= $price);
+        $thisOrder = new order( $_POST["products"], $loggedcustomer->getCustomerId() , $qty, $com, $price);
         $thisOrder->save();
         
-        $orderConfirmation = "Your order has be recorded!"."---> Subtotal: ".$subtotal."$---> taxes amount : ".$taxes. "$---> Grand total: ".$grandtotal."$";
+        $orderConfirmation = "Your order has be recorded!"."---> Subtotal: ".$subtotal."Credits---> taxes amount : ".$taxes. "Credits---> Grand total: ".$grandtotal."Credits \n";
         
-//        $order = array($prdcode, $fname, $lname, $city, $com, $price, $qty, $subtotal,$taxes,$grandtotal);
-//        file_put_contents(FILE_ORDERS, json_encode($order)."\r\n", FILE_APPEND);
 
         #clear the fields
         $com = "";
         $qty = "";
+        
+        echo "<script> location.href='". ORDERS_PAGE ."'; </script>";
+        exit;
+
+        
+
     }
 }
+
+
+
+if(isset($_SESSION["loggedUser"]))
+    {
+        $fname = $loggedcustomer->getFirstName();
+        $lname = $loggedcustomer->getLastName();
+        $city = $loggedcustomer->getCity();
 
 ?>
 <!--
@@ -106,9 +115,12 @@ login
 -->
 
 <div class="description">
-    <h1>Emporium Used Spaceship Acquisition Form:</h1>
+    <h2>Emporium Used Spaceship Acquisition Form:</h2>
     <span style="color:green">
 <?php
+
+var_dump($connection);
+
                     echo $orderConfirmation;
 ?>
     </span>
@@ -117,10 +129,10 @@ login
                     <label for="products">Product:</label>
                     <select name="products">
 <?php
-foreach( $products->items as $product ) {
-    echo '<option name="" value="' . $product->getProductId() . '">' . $product->getPrdCode(). " : " .  $product->getPrice(). " Credits " . '</option>"';
-    echo '<option disabled style="font-style:italic">&nbsp;&nbsp;&nbsp;'. $product->getINFO() .'</option>';
-}
+    foreach( $products->items as $product ) {
+        echo '<option name="" value="' . $product->getProductId() . '">' . $product->getPrdCode(). " : " .  $product->getPrice(). " Credits " . '</option>"';
+        echo '<option disabled style="font-style:italic">&nbsp;&nbsp;&nbsp;'. $product->getINFO() .'</option>';
+    }
 ?>
                     </select>
             </p>
@@ -131,7 +143,6 @@ foreach( $products->items as $product ) {
             <p>
                 <label>Last Name:</label>
                 <label><?php echo $lname; ?></label>
-     
             </p>
             <p>
                 <label>City:</label>
@@ -157,8 +168,7 @@ echo $qty;
 <?php
                     echo $validationErrorQty;
 ?>
-                                         </span>
-
+                </span>
             </p>
             <p>
                 <input type="submit" value="Save my data"  name="buy">
@@ -169,4 +179,12 @@ echo $qty;
     </div>
 
 <?php
-                pageBottom();
+    }
+    else{
+?>
+    <div class="description">
+    <h2>Please Login to Access the Buy feature</h2>
+    </div>
+<?php
+    }
+pageBottom();
